@@ -28,7 +28,7 @@ $app->get('/', function ($request, $response, $args) {
 })->setName('inicioSesion');
 
 
-$app->get('/registrarUsuarios', function ($request, $response, $args) {
+$app->get('/registrarUsuarios.html', function ($request, $response, $args) {
     $view = Twig::fromRequest($request);
     return $view->render($response, 'registrarUsuarios.html');
 })->setName('registrarUsuarios');
