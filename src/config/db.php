@@ -1,12 +1,12 @@
 <?php
-class data_base {
+class db {
   private $host = 'localhost';
   private $user = 'root';
   private $pass = '00875044500025';
   private $nombreDB = 'Libreria_db';
 
   // Conección
-  public function coneccionBD() {
+  public function connectiondb() {
     $mysqlConn = "mysql:host=$this->host;dbname=$this->nombreDB";
     $dbConn = new PDO($mysqlConn, $this->user, $this->pass);
     $dbConn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);

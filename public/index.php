@@ -7,6 +7,10 @@ use Slim\Views\TwigMiddleware;
 
 require __DIR__ . '/../vendor/autoload.php';
 require __DIR__ . '/../src/config/db.php';
+
+$database = new db();
+$database=$database-> connectiondb();
+
 // Create App
 $app = AppFactory::create();
 $app->setBasePath('/libreria_alejandria/public');
