@@ -27,6 +27,12 @@ $app->get('/', function ($request, $response, $args) {
     return $view->render($response, 'inicioSesion.html');
 })->setName('inicioSesion');
 
+
+$app->get('/registrarUsuarios', function ($request, $response, $args) {
+    $view = Twig::fromRequest($request);
+    return $view->render($response, 'registrarUsuarios.html');
+})->setName('registrarUsuarios');
+
 // Render from string
 $app->get('/hi/{name}', function ($request, $response, $args) {
     $view = Twig::fromRequest($request);
