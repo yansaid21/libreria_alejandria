@@ -13,6 +13,7 @@ $database=$database-> connectiondb();
 
 // Create App
 $app = AppFactory::create();
+$app->addBodyParsingMiddleware();
 $app->setBasePath('/libreria_alejandria/public');
 
 // Create Twig
@@ -22,7 +23,7 @@ $twig = Twig::create(__DIR__ . '/../src/templates', ['cache' => false]);
 $app->add(TwigMiddleware::create($app, $twig));
 
 // Define named route
-$app->get('/', function ($request, $response, $args) {
+$app->get('/', function (Request $request,Response $response) {
     $view = Twig::fromRequest($request);
     return $view->render($response, 'inicioSesion.html');
 })->setName('inicioSesion');
