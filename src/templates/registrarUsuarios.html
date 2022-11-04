@@ -6,9 +6,19 @@ Registro_Usuarios
 {%block body %}
     <div class="container">
         <div class="row">
+            <div class="col-md-0">
+                <div class="col-md-12 text-center">
+                    <h3>Usuario</h3>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
+                        <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+        <div class="row">
             <div class="col-md-0"></div>
-            <div class="col-md-4">
-                <div class="form-group" style="margin-top: 187px;">
+            <div class="col-md-3">
+                <div class="form-group" style="margin-top: 20px;">
                     <label for="exampleSelect1" class="form-label mt-4">Tipo documento</label>
                     <select class="form-select" id="exampleSelect1">
                       <option>Cédula</option>
@@ -21,10 +31,43 @@ Registro_Usuarios
                     <input type="" class="form-control" id="exampleInputUsuario" aria-describedby="emailHelp" placeholder="">
                 </div>
                 <div class="form-group" style="margin-top: 5px;">
+                    <label for="exampleInputUsuario" class="form-label mt-4">Primer Apellido</label>
+                    <input type="" class="form-control" id="exampleInputUsuario" aria-describedby="emailHelp" placeholder="">
+                </div>
+                <div class="form-group" style="margin-top: 5px;">
+                    <label for="exampleInputUsuario" class="form-label mt-4">Teléfono</label>
+                    <input type="" class="form-control" id="exampleInputUsuario" aria-describedby="emailHelp" placeholder="">
+                </div>
+            </div>
+            <div class="col-md-1"></div>
+            <div class="col-md-3">
+                <div class="form-group" style="margin-top: 20px;">
+                    <label for="exampleInputUsuario" class="form-label mt-4">Cédula</label>
+                    <input type="" class="form-control" id="exampleInputUsuario" aria-describedby="emailHelp" placeholder="" required>
+                </div>
+                <div class="form-group" style="margin-top: 5px;">
                     <label for="exampleInputUsuario" class="form-label mt-4">Segundo Nombre</label>
+                    <input type="" class="form-control" id="exampleInputUsuario" aria-describedby="emailHelp" placeholder="">
+                </div>
+                <div class="form-group" style="margin-top: 5px;">
+                    <label for="exampleInputUsuario" class="form-label mt-4">Segundo Apellido</label>
+                    <input type="" class="form-control" id="exampleInputUsuario" aria-describedby="emailHelp" placeholder="">
+                </div>
+                <div class="form-group" style="margin-top: 5px;">
+                    <label for="exampleInputUsuario" class="form-label mt-4">Email</label>
                     <input type="" class="form-control" id="exampleInputUsuario" aria-describedby="emailHelp" placeholder="">
                 </div>
             </div>
         </div>
+        <div class="row">
+            <div class="col-md-2"></div>
+                <div class="col-md-6">
+                    <div class="row w-50 align-items-center">
+                        <button type="button" class="btn btn-info" style="margin-top: 20px;">Registrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
     </div>
     {% endblock %}
