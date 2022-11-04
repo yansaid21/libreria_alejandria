@@ -7,20 +7,15 @@ use Slim\Views\TwigMiddleware;
 
 require __DIR__ . '/../vendor/autoload.php';
 require __DIR__ . '/../src/config/db.php';
-
 $database = new db();
 $database=$database-> connectiondb();
-
 // Create App
 $app = AppFactory::create();
 $app->setBasePath('/libreria_alejandria/public');
-
 // Create Twig
 $twig = Twig::create(__DIR__ . '/../src/templates', ['cache' => false]);
-
 // Add Twig-View Middleware
 $app->add(TwigMiddleware::create($app, $twig));
-
 // Define named route
 $app->get('/', function ($request, $response, $args) {
     $view = Twig::fromRequest($request);
@@ -45,6 +40,5 @@ $app->get('/hi/{name}', function ($request, $response, $args) {
     $response->getBody()->write($str);
     return $response;
 });
-
 // Run app
 $app->run();
