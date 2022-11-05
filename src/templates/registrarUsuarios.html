@@ -65,7 +65,14 @@ Registro_Usuarios
                 </svg>
                 <br><br>
                 <div class="col-md-6 offset-md-4 ">
-                    <button type="button" class="btn btn-primary" style="margin-top: 20px;">Elegir foto</button>
+                    <!--  <a  class="btn btn-primary" style="margin-top: 20px;" onclick="">
+                        <h6>Elegir foto</h6>
+                        <input type="file" name="files_image[]" id="files_image" multiple/>
+                    </a>
+                    <button type="button file" class="btn btn-primary" name="files_image[]" id="files_image" multiple>Elegir foto</button>-->
+                    <form name="subida-imagenes" type="POST" enctype="multipart/formdata" >
+                        <input type="file"name="imagen1" class="btn btn-primary" />
+                    </form>
                 </div>
             </div>
             
