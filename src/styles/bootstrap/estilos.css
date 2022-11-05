@@ -1,3 +1,51 @@
 body {
     background: fixed;
 }
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+#btn-mas{
+    display: none;
+}
+.cont{
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+}
+
+.iconos a, .btn-mas2{
+    display: block;
+    text-decoration: none;
+    background: #1CFAF0;
+    color: rgb(2, 8, 14);
+    width: 55px;
+    height: 55px;
+    line-height: 55px;
+    text-align: center;
+    border-radius: 50%;
+    box-shadow: 0px 1px 10px rgba(0,0,0,0.4);
+    transition: all 500ms ease;
+}
+
+.iconos a:hover{
+    background: rgb(2, 8, 14);
+    color: #1CFAF0;
+}
+.iconos a{
+    margin-bottom: -15px;
+    opacity: 0;
+    visibility: hidden;
+}
+#btn-mas:checked~ .iconos a{
+    margin-bottom: 10px;
+    opacity: 1;
+    visibility: visible;
+}
+.btn-mas2{
+    cursor: pointer;
+}
+#btn-mas:checked~ .btn-mas .btn-mas2{
+    transform: rotate(137deg);
+}
