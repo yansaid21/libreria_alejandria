@@ -11,7 +11,7 @@ require __DIR__ . '/../src/config/db.php';
 // Create App
 $app = AppFactory::create();
 $app->addBodyParsingMiddleware();
-$errorMiddleware = $app->addErrorMiddleware(true, true, true);
+#$errorMiddleware = $app->addErrorMiddleware(true, true, true);
 $app->setBasePath('/libreria_alejandria/public');
 
 // Create Twig
