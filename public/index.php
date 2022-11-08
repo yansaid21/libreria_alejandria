@@ -8,9 +8,6 @@ use Slim\Views\TwigMiddleware;
 require __DIR__ . '/../vendor/autoload.php';
 require __DIR__ . '/../src/config/db.php';
 
-$database = new db();
-$database=$database-> connectiondb();
-
 // Create App
 $app = AppFactory::create();
 $app->addBodyParsingMiddleware();
@@ -21,7 +18,7 @@ $twig = Twig::create(__DIR__ . '/../src/templates', ['cache' => false]);
 
 // Add Twig-View Middleware
 $app->add(TwigMiddleware::create($app, $twig));
-
+require __DIR__ . '/../src/config/rutas/usuario.php';
 // Define named route
 $app->get('/', function (Request $request,Response $response) {
     $view = Twig::fromRequest($request);
