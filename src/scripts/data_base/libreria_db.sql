@@ -2,7 +2,8 @@ create database if not exists libreria_db;
 use libreria_db;
 #drop database libreria_db;
 
-create table personas(
+create table usuarios(
+tipo_documento varchar(30),
 num_identificacion bigint not null primary key,
 nombre1 varchar(10) not null,
 nombre2 varchar(10),
@@ -11,7 +12,7 @@ apellido2 varchar(10),
 telefono bigint not null unique key,
 email varchar(40) not null unique key,
 password varchar(30) not null,
-tipo_persona enum("Usuario","Administrador","Autor"),
+tipo_usuario enum("Usuario","Administrador","Autor"),
 permiso boolean,
 id_img int
 );
@@ -39,7 +40,7 @@ id_registro int auto_increment not null primary key,
 fecha_adquisicion date,
 fk_num_identificacion bigint,
 fk_id_documento int,
-foreign key (fk_num_identificacion) references personas(num_identificacion),
+foreign key (fk_num_identificacion) references usuarios(num_identificacion),
 foreign key (fk_id_documento) references documentos(id_documento)
 );
 
@@ -61,5 +62,5 @@ foreign key (fk_id_contacto) references contactos(id_contacto)
 );
 
 ############
-insert into personas(num_identificacion,nombre1,nombre2,apellido1,apellido2,telefono,email,password,tipo_persona,id_img)
-values(1000217300,"jean","said","arias","marin",3103767661,"yansaid21@gmail.com","0087","Administrador",1);
+insert into usuarios(tipo_documento,num_identificacion,nombre1,nombre2,apellido1,apellido2,telefono,email,password,tipo_usuario,id_img)
+values("Cédula",1000217300,"jean","said","arias","marin",3103767661,"yansaid21@gmail.com","0087","Administrador",1);
