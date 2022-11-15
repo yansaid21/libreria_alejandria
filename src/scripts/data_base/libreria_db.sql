@@ -1,55 +1,66 @@
-create database if not exists Libreria_db;
-use Libreria_db;
+create database if not exists libreria_db;
+use libreria_db;
+#drop database libreria_db;
 
-create table Personas(
-Num_Identificacion bigint not null primary key,
-Nombre varchar(30) not null,
-Telefono bigint not null unique key,
-Email varchar(40) not null unique key,
-Tipo_Persona enum("Usuario","Administrador","Autor"),
-Permiso boolean
+create table usuarios(
+tipo_documento varchar(30),
+num_identificacion bigint not null primary key,
+nombre1 varchar(10) not null,
+nombre2 varchar(10),
+apellido1 varchar(10) not null,
+apellido2 varchar(10),
+telefono bigint not null unique key,
+email varchar(40) not null unique key,
+password varchar(30) not null,
+tipo_usuario enum("Usuario","Administrador","Autor"),
+permiso boolean,
+id_img int
 );
 
-Create table Direcciones(
-id_Direccion int auto_increment primary key,
-Tipo varchar(30) not null,
-Num1 varchar(30),
-Num2 varchar(30),
-Num3 varchar(30)
+Create table direcciones(
+id_direccion int auto_increment primary key,
+tipo varchar(30) not null,
+num1 varchar(30),
+num2 varchar(30),
+num3 varchar(30)
 );
 
-Create table Documentos(
-id_Documento int auto_increment primary key,
-Titulo varchar(30),
-Fecha_Publicacion date,
-Fecha_Creacion date,
-Fecha_Eliminacion date,
-Activo boolean,
-Pago boolean
+Create table documentos(
+id_documento int auto_increment primary key,
+titulo varchar(30),
+fecha_publicacion date,
+fecha_creacion date,
+fecha_eliminacion date,
+activo boolean,
+pago boolean
 );
 
-Create table Registros(
-id_Registro int auto_increment not null primary key,
-Fecha_Adquisicion date,
-FK_Num_identificacion bigint,
-FK_id_Documento int,
-foreign key (FK_Num_identificacion) references Personas(Num_Identificacion),
-foreign key (FK_id_Documento) references Documentos(id_Documento)
+Create table registros(
+id_registro int auto_increment not null primary key,
+fecha_adquisicion date,
+fk_num_identificacion bigint,
+fk_id_documento int,
+foreign key (fk_num_identificacion) references usuarios(num_identificacion),
+foreign key (fk_id_documento) references documentos(id_documento)
 );
 
-Create table Contactos(
-id_Contacto int auto_increment primary key,
-Email_Editorial varchar(30) not null unique key,
-Telefono_Contacto varchar(30) not null unique key,
-FK_id_Direccion int,
-foreign key (FK_id_Direccion) references Direcciones(id_Direccion)
+Create table contactos(
+id_contacto int auto_increment primary key,
+email_editorial varchar(30) not null unique key,
+telefono_contacto varchar(30) not null unique key,
+fk_id_direccion int,
+foreign key (fk_id_direccion) references direcciones(id_direccion)
 );
 
-create table Editoriales(
-id_Editorial int auto_increment primary key,
-Nombre_Editorial varchar(30) not null unique key,
-FK_id_Documento int,
-FK_id_Contacto int,
-foreign key (FK_id_Documento) references Documentos(id_Documento),
-foreign key (FK_id_Contacto) references Contactos(id_Contacto)
+create table editoriales(
+id_editorial int auto_increment primary key,
+nombre_editorial varchar(30) not null unique key,
+fk_id_documento int,
+fk_id_contacto int,
+foreign key (fk_id_documento) references documentos(id_documento),
+foreign key (fk_id_contacto) references contactos(id_contacto)
 );
+
+############
+insert into usuarios(tipo_documento,num_identificacion,nombre1,nombre2,apellido1,apellido2,telefono,email,password,tipo_usuario,id_img)
+values("Cédula",1000217300,"jean","said","arias","marin",3103767661,"yansaid21@gmail.com","0087","Administrador",1);
