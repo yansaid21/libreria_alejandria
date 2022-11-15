@@ -2,7 +2,7 @@
 class db {
   private $host = 'localhost';
   private $user = 'root';
-  private $pass = 'Suga01040309';
+  private $pass = '00875044500025';
   private $nombreDB = 'Libreria_db';
 
   // Conección
