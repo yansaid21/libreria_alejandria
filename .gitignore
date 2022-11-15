@@ -1,3 +1,4 @@
 .json
 .lock
 vendor
+db.php

@@ -12,7 +12,6 @@ class db {
     $dbConn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     if($dbConn){
         echo 'conection succesfuly';
-        
     }else{
         echo 'something is wrong whit the database conecction';
     }

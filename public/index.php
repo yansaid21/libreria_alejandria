@@ -16,10 +16,14 @@ $app->setBasePath('/libreria_alejandria/public');
 
 // Create Twig
 $twig = Twig::create(__DIR__ . '/../src/templates', ['cache' => false]);
-
 // Add Twig-View Middleware
 $app->add(TwigMiddleware::create($app, $twig));
-require __DIR__ . '/../src/config/rutas/usuario.php';
+
+
+
+require __DIR__ . '/../src/config/rutas/usuarios.php';
+
+
 // Define named route
 $app->get('/', function (Request $request,Response $response) {
     $view = Twig::fromRequest($request);
