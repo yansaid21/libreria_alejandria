@@ -6,6 +6,7 @@ use Psr\Http\Message\ServerRequestInterface as Request;
 
 $app->get('/api/usuarios', function (Request $request,Response $response){
 echo json_encode('llega al php del listado');
+
   $sql = "SELECT * FROM usuarios";
   try{
       $data_base= new db();
@@ -28,10 +29,10 @@ $data_base = null;
 });
 
 //GET by email
-$app->get('/api/usuarios/email_user', function(Request $request, Response $response, array $args) {
+$app->get('/api/usuarios/{email_user}', function(Request $request, Response $response, array $args) {
     $email = $args['email_user'];
-    echo json_encode('este es email en php'.$email);
-    $sql = "SELECT * FROM usuarios WHERE email = $email";
+    //echo json_encode('este es email en php '.$email);
+    $sql = "SELECT * FROM usuarios WHERE email = '$email'";
     try {
       $data_base = new db();
       $data_base = $data_base->connectiondb();
@@ -40,7 +41,7 @@ $app->get('/api/usuarios/email_user', function(Request $request, Response $respo
         $usuarios = $res->fetchAll(PDO::FETCH_OBJ);
         echo json_encode($usuarios);
       } else {
-        echo 'No hay usuarios que mostrar con este email';
+        echo json_encode('No hay usuarios que mostrar con este email');
       }
       $res = null;
       $data_base = null;

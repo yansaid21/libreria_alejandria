@@ -31,12 +31,12 @@ $app->get('/', function (Request $request,Response $response) {
 })->setName('inicioSesion');
 
 
-$app->get('/registrarUsuarios.html', function ($request, $response, $args) {
+$app->get('/registrarUsuarios', function ($request, $response, $args) {
     $view = Twig::fromRequest($request);
     return $view->render($response, 'registrarUsuarios.html');
 })->setName('registrarUsuarios');
 
-$app->get('/PaginaPrincipal.html', function ($request, $response, $args) {
+$app->get('/PaginaPrincipal', function ($request, $response, $args) {
     $view = Twig::fromRequest($request);
     return $view->render($response, 'PaginaPrincipal.html');
 })->setName('registrarUsuarios');

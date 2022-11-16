@@ -10,11 +10,11 @@ class db {
     $mysqlConn = "mysql:host=$this->host;dbname=$this->nombreDB";
     $dbConn = new PDO($mysqlConn, $this->user, $this->pass);
     $dbConn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    if($dbConn){
+   /* if($dbConn){
         echo 'conection succesfuly';
     }else{
         echo 'something is wrong whit the database conecction';
-    }
+    }*/
     return $dbConn;
   }
 }
