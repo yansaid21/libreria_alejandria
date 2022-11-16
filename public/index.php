@@ -23,19 +23,33 @@ require __DIR__ . '/../src/config/rutas/usuario.php';
 // Define named route
 $app->get('/', function (Request $request,Response $response) {
     $view = Twig::fromRequest($request);
-    return $view->render($response, 'inicioSesion.html');
+    return $view->render($response, 'InicioSesion.html');
 })->setName('inicioSesion');
 
+$app->get('/inicio', function ($request, $response, $args) {
+    $view = Twig::fromRequest($request);
+    return $view->render($response, 'InicioSesion.html');
+})->setName('inicio');
 
-$app->get('/registrarUsuarios.html', function ($request, $response, $args) {
+$app->get('/registrarUsuarios', function ($request, $response, $args) {
     $view = Twig::fromRequest($request);
     return $view->render($response, 'registrarUsuarios.html');
 })->setName('registrarUsuarios');
 
+$app->get('/olvidaste', function ($request, $response, $args) {
+    $view = Twig::fromRequest($request);
+    return $view->render($response, 'olvidaste.html');
+})->setName('olvidaste');
+
+$app->get('/comentarios', function ($request, $response, $args) {
+    $view = Twig::fromRequest($request);
+    return $view->render($response, 'comentarios.html');
+})->setName('comentarios');
+
 $app->get('/PaginaPrincipal.html', function ($request, $response, $args) {
     $view = Twig::fromRequest($request);
     return $view->render($response, 'PaginaPrincipal.html');
-})->setName('registrarUsuarios');
+})->setName('paginaPrincipal');
 
 
 // Run app

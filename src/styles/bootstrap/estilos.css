@@ -49,3 +49,6 @@ body {
 #btn-mas:checked~ .btn-mas .btn-mas2{
     transform: rotate(137deg);
 }
+#drop{
+    margin-right: 20px !important;
+}
