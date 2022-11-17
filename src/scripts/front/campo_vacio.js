@@ -61,4 +61,14 @@ function desaparecer_avatar_gato_panda(){
     document.getElementById("avatar_gato").style.display = 'none';
 }
 
-
+function validarEnteroEnCampo(identificadorDelCampo) {
+    /*let field = document.getElementById(identificadorDelCampo);
+    let valueInt = parseInt(field.value);
+    if (!Number.isInteger(valueInt)) {
+      return false;
+    } else {
+      field.value = valueInt;
+      return true;
+    }*/
+    console.log("numero documento -> "+ document.getElementById("numero_identidad").typeof());
+  }
