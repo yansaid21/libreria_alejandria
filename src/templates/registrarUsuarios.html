@@ -104,11 +104,11 @@ Registro_Usuarios
             <div class="col-md-2"></div>
             <div class="col-md-6">
                 <div class="row w-50 align-items-center">
-                    <button type="submit" class="btn btn-info" style="margin-top: 20px;" class="btn btn-outline-success float-right" data-bs-toggle="modal" data-bs-target="#modalNuevoEstudiante">Registrar</button>
+                    <button type="submit" class="btn btn-info" style="margin-top: 20px;"" onclick="return verificar_contraseña_campos()">Registrar</button>
                 </div>
             </div>
         </div>
-        <div class="modal" id="modalNuevoEstudiante">
+        <div class="modal" id="modal_registro_exitoso">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -127,5 +127,13 @@ Registro_Usuarios
             </div>
         </div>
     </form>
+
 </div>
+{% endblock %}
+
+
+{%block script%}
+{{ parent() }}
+
+<script src="{{ base_path() }}/../src/scripts/front/campo_vacio.js"></script>
 {% endblock %}

@@ -1,5 +1,5 @@
+console.log("mostrar en consola");
 let baseUrl = window.location.href;
-
 function listarUsuarios(){
     $.get(`${baseUrl}/../api.usuarios`,function(data){
         console.log('data: ',data)
