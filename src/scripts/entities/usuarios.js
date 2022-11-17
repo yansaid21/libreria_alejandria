@@ -1,15 +1,14 @@
+//console.log("mostrar en consola");
 let baseUrl = window.location.href;
-console.log("mostrar esto en consola");
 
 
 function listarUsuarios() {
-  console.log('usuarios list');
-
- $.get(`${baseUrl}/../api/usuarios`, function (data) {
+  //console.log(baseUrl);
+  $.get(`${baseUrl}/../api/usuarios`, function( data ) {
     console.log("lista de usuarios : ", data);
   });
 
-  //return false; 
+  return false; 
 }
 
 function crearUsuario() {
@@ -49,6 +48,10 @@ function inicioSesion(){
         icon: 'error',
         title: 'Oops...',
         text: 'Email/contraseña incorrecta(s)',
+        iconColor:'#6f42c1',
+        color:'white',
+        background: '#1a0933'
+
       })
     }
   },'json');
@@ -56,4 +59,4 @@ function inicioSesion(){
 
 }
 
-listarUsuarios();
+//listarUsuarios();
