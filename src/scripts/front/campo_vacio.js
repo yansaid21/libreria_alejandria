@@ -1,5 +1,5 @@
 console.log("llegupe mi perro ");
-
+const usuarios = require("./../entities/usuarios");
 function campos_vacios(){
     console.log("holita");
     let texto_primer_nombre = document.getElementById('primer_nombre');

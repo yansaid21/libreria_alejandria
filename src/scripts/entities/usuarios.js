@@ -14,7 +14,7 @@ function listarUsuarios() {
 function crearUsuario() {
   let datos_usuario = {
     tipo_documento: document.getElementById("select_tipo_documento").value.trim(),
-    num_identificacion: document.getElementById("num_identidad").value.trim(),
+    num_identificacion: document.getElementById("num_documento").value.trim(),
     nombre_1: document.getElementById("primer_nombre").value.trim(),
     nombre_2: document.getElementById("segundo_nombre").value.trim(),
     apellido_1: document.getElementById("primer_apellido").value.trim(),
