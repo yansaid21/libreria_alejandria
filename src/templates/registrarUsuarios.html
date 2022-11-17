@@ -5,10 +5,9 @@ Registro_Usuarios
 
 {%block body %}
     <div class="container">
-    <form method="post" id="formRegistrarUsuarios" onSubmit="return crear_usuario()">
         <div class="row">
             <div class="col-md-0">
-                <div class=" text-center">
+                <div class="col-md-12 text-center">
                     <h3>Usuario</h3>
                     <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
                         <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
@@ -16,99 +15,91 @@ Registro_Usuarios
                 </div>
             </div>
         </div>
+    </div>
+    <form method="GET" id="frmRegistrarUsuario" onsubmit="return crearUsuario(this)">     
         <div class="row">
             <div class="col-md-3 ">
                 <div class="form-group" style="margin-top: 20px;">
-                    <label for="tipo_documento" class="form-label mt-4">Tipo documento *</label>
-                    <select class="form-select" id="tipo_documento" required>
+                    <label for="exampleSelect1" class="form-label mt-4">Tipo documento</label>
+                    <select class="form-select" id="exampleSelect1">
                       <option>Cédula</option>
                       <option>Tarjeta de identidad</option>
                       <option>Pasaporte</option>
                     </select>
-                </div>                
+                </div>           
                 <div class="form-group" style="margin-top: 5px;">
-                    <label for="primer_nombre" class="form-label mt-4">Primer Nombre *</label>
-                    <input type="" class="form-control" id="primer_nombre" aria-describedby="emailHelp" placeholder="" required>
+                    <label for="exampleInputUsuario" class="form-label mt-4">Primer Nombre</label>
+                    <input type="" class="form-control" id="exampleInputUsuario" aria-describedby="emailHelp" placeholder="">
                 </div>
                 <div class="form-group" style="margin-top: 5px;">
-                    <label for="primer_apellido" class="form-label mt-4">Primer Apellido *</label>
-                    <input type="" class="form-control" id="primer_apellido" aria-describedby="emailHelp" placeholder="" required>
+                    <label for="exampleInputUsuario" class="form-label mt-4">Primer Apellido</label>
+                    <input type="" class="form-control" id="exampleInputUsuario" aria-describedby="emailHelp" placeholder="">
                 </div>
                 <div class="form-group" style="margin-top: 5px;">
-                    <label for="telefono" class="form-label mt-4">Teléfono *</label>
-                    <input type="" class="form-control" id="telefono" aria-describedby="emailHelp" placeholder="" required>
+                    <label for="exampleInputUsuario" class="form-label mt-4">Teléfono</label>
+                    <input type="" class="form-control" id="exampleInputUsuario" aria-describedby="emailHelp" placeholder="">
                 </div>
                 <div class="form-group" style="margin-top: 5px;">
                     <label for="contrasena" class="form-label mt-4">Contraseña *</label>
                     <input type="password" class="form-control" id="contrasena"<label for="contrasena" placeholder="" required>
-                </div>
+                    </div>
             </div>
             <div class="col-md-1"></div>
             <div class="col-md-3 ">
                 <div class="form-group" style="margin-top: 20px;">
-                    <label for="numero_identidad" class="form-label mt-4">Número Documento *</label>
-                    <input type="" class="form-control" id="numero_identidad" aria-describedby="emailHelp" placeholder="" required>
+                    <label for="exampleInputUsuario" class="form-label mt-4">Cédula</label>
+                    <input type="" class="form-control" id="exampleInputUsuario" aria-describedby="emailHelp" placeholder="" required>
                 </div>
                 <div class="form-group" style="margin-top: 5px;">
-                    <label for="segundo_nombre" class="form-label mt-4">Segundo Nombre</label>
-                    <input type="" class="form-control" id="segundo_nombre" aria-describedby="emailHelp" placeholder="">
+                    <label for="exampleInputUsuario" class="form-label mt-4">Segundo Nombre</label>
+                    <input type="" class="form-control" id="exampleInputUsuario" aria-describedby="emailHelp" placeholder="">
                 </div>
             
                 <div class="form-group" style="margin-top: 5px;">
-                    <label for="segundo_apellido" class="form-label mt-4">Segundo Apellido</label>
-                    <input type="" class="form-control" id="segundo_apellido" aria-describedby="emailHelp" placeholder="">
+                    <label for="exampleInputUsuario" class="form-label mt-4">Segundo Apellido</label>
+                    <input type="" class="form-control" id="exampleInputUsuario" aria-describedby="emailHelp" placeholder="">
                 </div>
                 <div class="form-group" style="margin-top: 5px;">
-                    <label for="email" class="form-label mt-4">Email *</label>
-                    <input type="" class="form-control" id="email" aria-describedby="emailHelp" placeholder="" required>
-                </div>
-                <div class="form-group" style="margin-top: 5px;">
-                    <label for="verificacion_contrasena" class="form-label mt-4">Verificación Contraseña *</label>
-                    <input type="password" class="form-control" id="verificacion_contrasena"<label for="verificacion_contrasena" placeholder="" required>
+                    <label for="exampleInputUsuario" class="form-label mt-4">Email</label>
+                    <input type="" class="form-control" id="exampleInputUsuario" aria-describedby="emailHelp" placeholder="">
                 </div>
             </div>
-            <div class="col-md-1"></div>
-            <div class="col-md-1">
-                <h2 style="text-align: center;">Avatar</h2>
-                <br>
-                <img src="https://previews.123rf.com/images/jpgon/jpgon1409/jpgon140900160/31731432-ilustraci%C3%B3n-de-un-avatar-gato-de-dibujos-animados.jpg?fj=1" alt="" width="140" height="140" id="avatar_gato">
-                <img src="https://thumbs.dreamstime.com/b/avatar-de-la-panda-45383457.jpg" alt="" width="140" height="140" id="avatar_panda">
-                <img src="https://thumbs.dreamstime.com/b/avatar-del-elefante-97751404.jpg" alt="" width="140" height="140" id="avatar_elefante">
+            <div class="col-md-4" style="text-align: right;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+                    <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+                    <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+                </svg>
+                <br><br>
+                <div class="col-md-6 offset-md-4 ">
+                    <!--  <a  class="btn btn-primary" style="margin-top: 20px;" onclick="">
+                        <h6>Elegir foto</h6>
+                        <input type="file" name="files_image[]" id="files_image" multiple/>
+                    </a>
+                    <button type="button file" class="btn btn-primary" name="files_image[]" id="files_image" multiple>Elegir foto</button>-->
+                    <form name="subida-imagenes" type="POST" enctype="multipart/formdata" >
+                        <input type="file"name="imagen1" class="btn btn-primary" />
+                    </form>
+                </div>
             </div>
-            <div class="col-md-1"></div>
-            <div class="col-md-2">
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <button type="button" class="btn btn-primary btn-sm" id="btn_avatar_gato">Elegir gato</button>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <button type="button" class="btn btn-primary btn-sm" id="btn_avatar_panda">Elegir panda</button>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <button type="button" class="btn btn-primary btn-sm" id="btn_avatar_elefante">Elegir elefante</button>
-            </div>
+            
         </div>
         <br>
         <div class="row">
             <div class="col-md-2"></div>
                 <div class="col-md-6">
                     <div class="row w-50 align-items-center">
-                        <button type="submit" class="btn btn-info" style="margin-top: 20px;" onclick="location.href='InicioSesion.html'">Registrar</button>
+                        <button type="button" class="btn btn-info" style="margin-top: 20px;">Registrar</button>
                     </div>
                 </div>
             </div>
         </div>
     </form>
     </div>
+{% endblock %}
+
+
+{%block script%}
+{{ parent() }}
+
+<script src="{{ base_path() }}/../src/scripts/front/campo_vacio.js"></script>
 {% endblock %}

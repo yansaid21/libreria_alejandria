@@ -1,4 +1,4 @@
-//console.log("mostrar en consola");
+console.log("mostrar en consola");
 let baseUrl = window.location.href;
 
 
@@ -59,4 +59,4 @@ function inicioSesion(){
 
 }
 
-//listarUsuarios();
+listarUsuarios();
