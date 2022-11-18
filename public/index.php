@@ -30,7 +30,7 @@ $app->get('/', function (Request $request,Response $response) {
     return $view->render($response, 'InicioSesion.html');
 })->setName('inicioSesion');
 
-$app->get('/registrarUsuarios.html', function ($request, $response, $args) {
+$app->get('/registrarUsuarios', function ($request, $response, $args) {
     $view = Twig::fromRequest($request);
     return $view->render($response, 'registrarUsuarios.html');
 })->setName('registrarUsuarios');
