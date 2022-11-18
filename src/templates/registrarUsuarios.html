@@ -16,7 +16,7 @@ Registro_Usuarios
             </div>
         </div>
     </div>
-    <form method="post "id="frmRegistrarUsuario" onSubmit="return verificar_contraseña_campos()">     
+    <form method="POST" id="frmRegistrarUsuario" onSubmit="return verificar_contraseña_campos()">     
         <div class="row">
             <div class="col-md-3 ">
                 <div class="form-group" style="margin-top: 20px;">
@@ -75,6 +75,7 @@ Registro_Usuarios
                 <img src="https://previews.123rf.com/images/jpgon/jpgon1409/jpgon140900160/31731432-ilustraci%C3%B3n-de-un-avatar-gato-de-dibujos-animados.jpg?fj=1" alt="" width="140" height="140" id="avatar_gato">
                 <img src="https://thumbs.dreamstime.com/b/avatar-de-la-panda-45383457.jpg" alt="" width="140" height="140" id="avatar_panda">
                 <img src="https://thumbs.dreamstime.com/b/avatar-del-elefante-97751404.jpg" alt="" width="140" height="140" id="avatar_elefante">
+                <input type="text" id="avatar_elegido" style="display:none">
             </div>
             <div class="col-md-1"></div>
             <div class="col-md-2">
@@ -119,5 +120,6 @@ Registro_Usuarios
 {{ parent() }}
 
 <script src="{{ base_path() }}/../src/scripts/front/campo_vacio.js" type="module"></script>
+<script src="{{ base_path() }}/../src/scripts/front/ocultar_avatares.js"></script>
 
 {% endblock %}

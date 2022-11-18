@@ -14,7 +14,7 @@ email varchar(40) not null unique key,
 password varchar(30) not null,
 tipo_usuario enum("Usuario","Administrador","Autor"),
 permiso boolean,
-id_img int
+id_img varchar (100)
 );
 
 Create table direcciones(
@@ -63,4 +63,6 @@ foreign key (fk_id_contacto) references contactos(id_contacto)
 
 ############
 insert into usuarios(tipo_documento,num_identificacion,nombre1,nombre2,apellido1,apellido2,telefono,email,password,tipo_usuario,id_img)
-values("Cédula",1000217300,"jean","said","arias","marin",3103767661,"yansaid21@gmail.com","0087","Administrador",1);
+values("Cédula",1000217300,"jean","said","arias","marin",3103767661,"yansaid21@gmail.com","0087","Administrador","https://thumbs.dreamstime.com/b/avatar-de-la-panda-45383457.jpg");
+SELECT * FROM usuarios WHERE email = "yansaid21@gmail.com";
+select * from usuarios;

@@ -36,32 +36,7 @@ console.log("llegue mi perro ");
     return false;
 }
 
-function desaparecer_avatar_panda_elefante(){
-    //style="display: none"
-    document.getElementById("btn_avatar_gato").style.display = 'none';
-    document.getElementById("btn_avatar_panda").style.display = 'none';
-    document.getElementById("avatar_panda").style.display = 'none';
-    document.getElementById("btn_avatar_elefante").style.display = 'none';
-    document.getElementById("avatar_elefante").style.display = 'none';
-}
 
-function desaparecer_avatar_gato_elefante(){
-    //style="display: none"
-    document.getElementById("btn_avatar_panda").style.display = 'none';
-    document.getElementById("btn_avatar_gato").style.display = 'none';
-    document.getElementById("avatar_gato").style.display = 'none';
-    document.getElementById("btn_avatar_elefante").style.display = 'none';
-    document.getElementById("avatar_elefante").style.display = 'none';
-}
-
-function desaparecer_avatar_gato_panda(){
-    //style="display: none"
-    document.getElementById("btn_avatar_elefante").style.display = 'none';
-    document.getElementById("btn_avatar_panda").style.display = 'none';
-    document.getElementById("avatar_panda").style.display = 'none';
-    document.getElementById("btn_avatar_gato").style.display = 'none';
-    document.getElementById("avatar_gato").style.display = 'none';
-}
 
 function validarEnteroEnCampo(identificadorDelCampo) {
     /*let field = document.getElementById(identificadorDelCampo);

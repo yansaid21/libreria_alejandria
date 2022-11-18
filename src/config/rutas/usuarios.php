@@ -53,38 +53,40 @@ $app->get('/api/usuarios/{email_user}', function(Request $request, Response $res
   });
 
   //POST NEW USER
-  $app->post('/api/estudiantes/nuevo', function(Request $request, Response $response, array $args) {
-    $tipo_documento = $request->getParsedBody()['select_tipo_documento'];
+  $app->post('/api/usuarios/nuevo', function(Request $request, Response $response, array $args) {
+    $tipo_documento = $request->getParsedBody()['tipo_documento'];
+    echo json_encode($tipo_documento);
     $num_identificacion = $request->getParsedBody()['num_identificacion'];
-    
-    $nombre1 = $request->getParsedBody()['primer_nombre'];
-    $nombre2 = $request->getParsedBody()['segundo_nombre'];
-    $apellido1 = $request->getParsedBody()['primer_apellido'];
-    $apellido2 = $request->getParsedBody()['segundo_apellido'];
+    $nombre1 = $request->getParsedBody()['nombre_1'];
+    $nombre2 = $request->getParsedBody()['nombre_2'];
+    $apellido1 = $request->getParsedBody()['apellido_1'];
+    $apellido2 = $request->getParsedBody()['apellido_2'];
     $telefono = $request->getParsedBody()['telefono'];
-    $contrasena = $request->getParsedBody()['contrasena'];
-    //$id_img = $request->getParsedBody()['contrasena'];
-    
-    
     $email = $request->getParsedBody()['email'];
+    $contrasena = $request->getParsedBody()['password'];
+    $id_img = $request->getParsedBody()['img'];
   
-    $sql = "INSERT INTO usuarios(tipo_documento,num_identificacion,nombre1,nombre2,apellido1,apellido2,telefono,email,password,tipo_usuario)
+    $sql = "INSERT INTO usuarios(tipo_documento,num_identificacion,nombre1,nombre2,apellido1,apellido2,telefono,email,password,id_img)
             VALUES
-            (:nombres, :apellidos, :direccion, :celular, :email)";
+            (:tipo_documento, :num_identificacion, :nombre1, :nombre2, :apellido1, :apellido2, :telefono, :email, :contrasena, :id_img)";
     try {
       $data_base = new db();
       $data_base = $data_base->connectiondb();
       $res = $data_base->prepare($sql);
   
-      $res->bindParam(':nombres', $nombres);
-      $res->bindParam(':apellidos', $apellidos);
-      $res->bindParam(':direccion', $direccion);
-      $res->bindParam(':celular', $celular);
+      $res->bindParam(':tipo_documento', $tipo_documento);
+      $res->bindParam(':num_identificacion', $num_identificacion);
+      $res->bindParam(':nombre1', $nombre1);
+      $res->bindParam(':nombre2', $nombre2);
+      $res->bindParam(':apellido1', $apellido1);
+      $res->bindParam(':apellido2', $apellido2);
+      $res->bindParam(':telefono', $telefono);
       $res->bindParam(':email', $email);
-  
+      $res->bindParam(':contrasena', $contrasena);
+      $res->bindParam(':id_img', $id_img);
       $res->execute();
   
-      echo 'Nuevo estudiantes creado';
+      echo json_encode('Nuevo usuario creado') ;
   
       $res = null;
       $bd = null;

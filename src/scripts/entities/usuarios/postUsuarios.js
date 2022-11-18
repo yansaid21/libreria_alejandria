@@ -1,4 +1,6 @@
+let baseUrl = window.location.href;
 export function crearUsuario() {
+    //console.log(document.getElementById("avatar_elegido").value.trim())
     let datos_usuario = {
       tipo_documento: document.getElementById("select_tipo_documento").value.trim(),
       num_identificacion: document.getElementById("numero_identidad").value.trim(),
@@ -9,10 +11,11 @@ export function crearUsuario() {
       telefono: document.getElementById("telefono").value.trim(),
       email: document.getElementById("email").value.trim(),
       password: document.getElementById("contrasena").value.trim(),
+      img: document.getElementById("avatar_elegido").value.trim()
     };
-    console.log("aqui todo bien crearusuario");
+    //console.log("aqui todo bien crearusuario");
     $.post(`${baseUrl}/../api/usuarios/nuevo`, datos_usuario, function (data) {
-      alert(data);
+      console.log(data);
     });
   
     return false;
