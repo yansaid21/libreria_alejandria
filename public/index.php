@@ -67,6 +67,10 @@ $app->get('/PaginaPrincipal.html', function ($request, $response, $args) {
     return $view->render($response, 'PaginaPrincipal.html');
 })->setName('paginaPrincipal');
 
+$app->get('/info', function ($request, $response, $args) {
+    $view = Twig::fromRequest($request);
+    return $view->render($response, 'sobre_nosotros.html');
+})->setName('info');
 
 // Run app
 $app->run();
