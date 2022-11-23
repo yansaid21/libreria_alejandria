@@ -45,7 +45,7 @@ $app->get('/comentarios', function ($request, $response, $args) {
     return $view->render($response, 'comentarios.html');
 })->setName('comentarios');
 
-$app->get('/PaginaPrincipal', function ($request, $response, $args) {
+$app->get('/PaginaPrincipal/{email_user}', function ($request, $response, $args) {
     $view = Twig::fromRequest($request);
     return $view->render($response, 'PaginaPrincipal.html');
 })->setName('paginaPrincipal');

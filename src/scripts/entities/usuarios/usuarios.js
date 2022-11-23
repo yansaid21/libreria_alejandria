@@ -14,15 +14,17 @@ function listarUsuarios() {
 
 function inicioSesion(){
   console.log("entra inicioSesion");
+  console.log("base url ", baseUrl);
   email_user = document.getElementById("email_user").value.trim();
   $.get(`${baseUrl}/../api/usuarios/${email_user}`, function (data) {
     let dataUsr = data[0];
     console.log("log del usuarios.js: ", dataUsr);
     //console.log("contraseña de la database: ", dataUsr.password);
     console.log("contraseña input",document.getElementById("InputContrasena").value.trim() );
+    var url= "/libreria_alejandria/public/PaginaPrincipal/" +email_user; 
     if (dataUsr=="" || document.getElementById("InputContrasena").value.trim() == dataUsr.password )
      {
-      location.href = "/libreria_alejandria/public/PaginaPrincipal";
+      location.href = url;
     } else {
       Swal.fire({
         icon: 'error',
@@ -38,5 +40,3 @@ function inicioSesion(){
   return false;
 
 }
-
-//listarUsuarios();
