@@ -41,10 +41,26 @@ $app->get('/olvidaste', function ($request, $response, $args) {
     return $view->render($response, 'olvidaste.html');
 })->setName('olvidaste');
 
+$app->get('/ayuda', function ($request, $response, $args) {
+    $view = Twig::fromRequest($request);
+    return $view->render($response, 'ayuda.html');
+})->setName('ayuda');
+
+$app->get('/compras', function ($request, $response, $args) {
+    $view = Twig::fromRequest($request);
+    return $view->render($response, 'compras.html');
+})->setName('compras');
+
 $app->get('/comentarios', function ($request, $response, $args) {
     $view = Twig::fromRequest($request);
     return $view->render($response, 'comentarios.html');
 })->setName('comentarios');
+
+$app->get('/administrador', function ($request, $response, $args) {
+    $view = Twig::fromRequest($request);
+    return $view->render($response, 'administrador.html');
+})->setName('administrador');
+
 
 $app->get('/PaginaPrincipal.html', function ($request, $response, $args) {
     $view = Twig::fromRequest($request);
