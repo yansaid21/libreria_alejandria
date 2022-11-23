@@ -36,7 +36,7 @@ Registro_Usuarios
                 </div>
                 <div class="form-group" style="margin-top: 5px;">
                     <label for="telefono" class="form-label mt-4">Teléfono *</label>
-                    <input type="" class="form-control" id="telefono" aria-describedby="emailHelp" placeholder="" required>
+                    <input type="number" inputmode="numeric" class="form-control" id="telefono" aria-describedby="emailHelp" placeholder="" pattern="[0-9]{10}" required>
                 </div>
                 <div class="form-group" style="margin-top: 5px;">
                     <label for="contrasena" class="form-label mt-4">Contraseña *</label>
@@ -47,7 +47,7 @@ Registro_Usuarios
             <div class="col-md-3 ">
                 <div class="form-group" style="margin-top: 20px;">
                     <label for="numero_identidad" class="form-label mt-4">Número Documento *</label>
-                    <input type="" class="form-control" id="numero_identidad" aria-describedby="emailHelp" placeholder="" required>
+                    <input type="number" class="form-control" id="numero_identidad" aria-describedby="emailHelp" placeholder="" pattern="[0-9]{10}" required>
                 </div>
                 <div class="form-group" style="margin-top: 5px;">
                     <label for="segundo_nombre" class="form-label mt-4">Segundo Nombre</label>
@@ -82,21 +82,21 @@ Registro_Usuarios
                 <br>
                 <br>
                 <br>
-                <button type="button" class="btn btn-primary btn-sm" id="btn_avatar_gato">Elegir gato</button>
+                <button type="button" class="btn btn-primary btn-sm" id="btn_avatar_gato" onclick="return desaparecer_avatar_panda_elefante()">Elegir gato</button>
                 <br>
                 <br>
                 <br>
                 <br>
                 <br>
                 <br>
-                <button type="button" class="btn btn-primary btn-sm" id="btn_avatar_panda">Elegir panda</button>
+                <button type="button" class="btn btn-primary btn-sm" id="btn_avatar_panda" onclick="return desaparecer_avatar_gato_elefante()">Elegir panda</button>
                 <br>
                 <br>
                 <br>
                 <br>
                 <br>
                 <br>
-                <button type="submit" class="btn btn-primary btn-sm" id="btn_avatar_elefante">Elegir elefante</button>
+                <button type="submit" class="btn btn-primary btn-sm" id="btn_avatar_elefante" onclick="return desaparecer_avatar_gato_panda()">Elegir elefante</button>
             </div>
         </div>
         <br>
@@ -105,24 +105,6 @@ Registro_Usuarios
             <div class="col-md-6">
                 <div class="row w-50 align-items-center">
                     <button type="submit" class="btn btn-info" style="margin-top: 20px;"" onclick="return verificar_contraseña_campos()">Registrar</button>
-                </div>
-            </div>
-        </div>
-        <div class="modal" id="modal_registro_exitoso">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title">Registro exitoso</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true"></span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <p>Registro creado con éxito, vuelva al inicio</p>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" onclick="location.href='PaginaPrincipal.html'">Inicio</button>
-                    </div>
                 </div>
             </div>
         </div>
