@@ -72,5 +72,10 @@ $app->get('/documentosUsuarios', function ($request, $response, $args) {
     return $view->render($response, 'documentosUsuarios.html');
 })->setName('documentosUsuarios');
 
+$app->get('/info', function ($request, $response, $args) {
+    $view = Twig::fromRequest($request);
+    return $view->render($response, 'sobre_nosotros.html');
+})->setName('info');
+
 // Run app
 $app->run();
