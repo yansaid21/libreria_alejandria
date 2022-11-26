@@ -135,8 +135,12 @@ header{
     width: 100%;
   }
 
-.pills-tab-libros,
+.nav-link-all.active,
 .show>.nav-pills .nav-link{
     background: #6f42c1 !important
+}
+
+.btn button{
+    visibility: hidden;
 }
   

@@ -18,7 +18,7 @@ function verificar_contraseña_campos(){
             color: 'white',
             text: 'Vuelve a escribirla',
             showConfirmButton: true
-          })
+        })
     } else if (texto_primer_nombre != "" && texto_primer_apellido != "" && texto_numero_documento != "" && texto_telefono != "" && texto_email != "" && contrasena1 != "" && contrasena2 != ""){
         Swal.fire({
             icon: 'success',
@@ -38,8 +38,7 @@ function verificar_contraseña_campos(){
             title: 'No has llenado todos los campos',
             color: 'white',
             text: 'Verifica que has llenado todos los campos obligatorior (*) ',
-            showConfirmButton:false,
-            footer: '<a class="btn btn-primary" href="/libreria_alejandria/public">Iniciar Sesión</a>'
+            showConfirmButton:true
         })
     }
     return false;
@@ -70,4 +69,49 @@ function desaparecer_avatar_gato_panda(){
     document.getElementById("avatar_panda").style.display = 'none';
     document.getElementById("btn_avatar_gato").style.display = 'none';
     document.getElementById("avatar_gato").style.display = 'none';
+}
+
+function eliminar_documento(){
+    Swal.fire({
+        title: '¿Estás seguro de eliminar este documento?',
+        text: "¡No habrá vuelta atrás!",
+        icon: 'warning',
+        iconColor: '#6f42c1',
+        color: 'white',
+        background: '#1a0933',
+        showCancelButton: true,
+        confirmButtonColor: '#ea39b8',
+        cancelButtonColor: '#e44c55',
+        confirmButtonText: 'Sí, quiero eliminarlo',
+        cancelButtonText: 'Cancelar'
+    }).then((result) => {
+    if (result.isConfirmed) {
+        Swal.fire({
+        icon: 'warning',
+        iconColor: '#6f42c1',
+        color: 'white',
+        background: '#1a0933',
+        icon: 'success',
+        title: 'Eliminado',
+        text: 'Tu documento ha sido eliminado',
+        showConfirmButton: true
+        })
+    }
+    })
+}
+
+function descargar_documento(){
+    Swal.fire({
+        title: '¿Estás seguro de descargar este documento?',
+        text: "¡Tendrás que pagar por él!",
+        icon: 'warning',
+        iconColor: '#6f42c1',
+        color: 'white',
+        background: '#1a0933',
+        showCancelButton: true,
+        confirmButtonColor: '#ea39b8',
+        cancelButtonColor: '#e44c55',
+        confirmButtonText: 'Sí, quiero descargarlo',
+        cancelButtonText: 'Cancelar'
+    })
 }
