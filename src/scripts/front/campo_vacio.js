@@ -30,6 +30,17 @@ function verificar_contraseña_campos(){
             showConfirmButton:false,
             footer: '<a class="btn btn-primary" href="/libreria_alejandria/public">Iniciar Sesión</a>'
         })
+    } else {
+        Swal.fire({
+            icon: 'error',
+            iconColor: '#6f42c1',
+            background: '#1a0933',
+            title: 'No has llenado todos los campos',
+            color: 'white',
+            text: 'Verifica que has llenado todos los campos obligatorior (*) ',
+            showConfirmButton:false,
+            footer: '<a class="btn btn-primary" href="/libreria_alejandria/public">Iniciar Sesión</a>'
+        })
     }
     return false;
 }
@@ -59,34 +70,4 @@ function desaparecer_avatar_gato_panda(){
     document.getElementById("avatar_panda").style.display = 'none';
     document.getElementById("btn_avatar_gato").style.display = 'none';
     document.getElementById("avatar_gato").style.display = 'none';
-}
-
-function validarEnteroEnCampo() {
-    numero_identidad = document.getElementById("numero_identidad").value;
-    ni = parseInt(numero_identidad);
-    console.log("numero documento  -> "+ ni[2]);
-    if (isNaN(ni)) {
-        console.log("numero documento 1 -> "+ ni.typeof);
-        return false;
-    } else {
-        //numero_identidad.value = valueInt;
-      console.log("numero documento 2 -> "+ ni.typeof);
-      return true;
-    }
-  }
-
-  function validarEntero(valor){
-    //intento convertir a entero.
-   //si era un entero no le afecta, si no lo era lo intenta convertir
-   numero_identidad = document.getElementById("numero_identidad").value;
-   valor = parseInt(numero_identidad)
-
-    //Compruebo si es un valor numérico
-    if (isNaN(valor)) {
-          //entonces (no es numero) devuelvo el valor cadena vacia
-          return ""
-    }else{
-          //En caso contrario (Si era un número) devuelvo el valor
-          return valor
-    }
 }

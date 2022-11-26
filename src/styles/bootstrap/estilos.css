@@ -115,3 +115,28 @@ header{
     left: 0;
     z-index: 1030;
 } */
+  .btn-primary .btn {
+    width: 50%;
+  }
+  .btn-primary {
+    width: 100%;
+  }
+  .btn-outline-secondary .btn {
+    width: 50%;
+  }
+  .btn-outline-secondary {
+    width: 100%;
+  }
+
+  .nav-link .btn {
+    width: 50%;
+  }
+  .nav-link {
+    width: 100%;
+  }
+
+.pills-tab-libros,
+.show>.nav-pills .nav-link{
+    background: #6f42c1 !important
+}
+  
