@@ -4,10 +4,15 @@ let urlactual = window.location.href;
 var articulos=[];
 var ponencias=[];
 var libros=[];
+var indexArticulos=0;
+var indexPonencias=0;
+var indexLibros=0;
+
+
 //console.log("base url", baseUrl);
 
 
-function mostrarLibros() {
+function enlistarLibros() {
   articulos=[];
  ponencias=[];
  libros=[];
@@ -38,11 +43,9 @@ function mostrarLibros() {
  
  
 }
- async function retornoPosicion(lista,posicion){
-  await mostrarLibros().then(()=>{
-
-    let dataBook;
-    console.log("lista: ", lista);
+function retornoPosicion(lista,posicion){
+  let dataBook;
+  console.log("lista: ", lista);
     console.log("posicion: ", posicion);
     if(lista=='articulos'){
       console.log("articulos: ", articulos);
@@ -56,13 +59,143 @@ function mostrarLibros() {
       dataBook=libros[posicion];
       document.getElementById('libros').src=dataBook.url_img; 
     }
-  })
 }
 
-function elementosPrincipales(){
-  retornoPosicion('articulos',0); 
-  retornoPosicion('libros',0);
-  retornoPosicion('ponencias',0);
+function sumarPaginacionArticulos(){
+  if(indexArticulos<articulos.length-1){
 
+    indexArticulos++;
+    return indexArticulos;
+  }
 }
-elementosPrincipales();
+
+function restarPaginacionArticulos(){
+  if(indexArticulos>0){
+
+    indexArticulos--;
+    return indexArticulos;
+  }
+}
+function organizarArticulo(index){
+  indexArticulos=index;
+  return indexArticulos
+}
+function siguienteArticulo(){
+  let html;
+    html =`
+      <li class="page-item">
+      <button class="page-link" href="javascript:;" onClick=" ;retornoPosicion('articulos',restarPaginacionArticulos() )">&laquo;</button>
+      </li>
+      <li class="page-item ">
+        <button type="button" class="page-link" href="javascript:;" onClick="return retornoPosicion('articulos',organizarArticulo(0))">1</button>
+      </li>
+      <li class="page-item">
+        <button type="button" class="page-link" href="javascript:;" onClick="return retornoPosicion('articulos',organizarArticulo(1))">2</button>
+      </li>                
+      <li class="page-item">
+        <button type="button" class="page-link" href="javascript:;" onClick="return retornoPosicion('articulos',organizarArticulo(2))">3</button>
+      </li>
+      <li class="page-item">
+        <button class="page-link" href="javascript:;" onClick=" ;retornoPosicion('articulos',sumarPaginacionArticulos() )">&raquo;</button>
+      </li>
+                    
+  `;
+  $('#paginacion_articulos').html(html);
+}
+
+function sumarPaginacionPonencias(){
+  if(indexPonencias<ponencias.length-1){
+
+    indexPonencias++;
+    return indexPonencias;
+  }
+}
+
+function restarPaginacionPonencias(){
+  if(indexPonencias>0){
+
+    indexPonencias--;
+    return indexPonencias;
+  }
+}
+function organizarPonencia(index){
+  indexPonencias=index;
+  return indexPonencias
+}
+function siguientePonencia(){
+  console.log("este es indexPonencias: ",indexPonencias);
+  let html;
+    html =`
+      <li class="page-item">
+      <button class="page-link" href="javascript:;" onClick=" ;retornoPosicion('ponencias',restarPaginacionPonencias() )">&laquo;</button>
+      </li>
+      <li class="page-item ">
+        <button type="button" class="page-link" href="javascript:;" onClick="return retornoPosicion('ponencias',organizarPonencia(0))">1</button>
+      </li>
+      <li class="page-item">
+        <button type="button" class="page-link" href="javascript:;" onClick="return retornoPosicion('ponencias',organizarPonencia(1))">2</button>
+      </li>                
+      <li class="page-item">
+        <button type="button" class="page-link" href="javascript:;" onClick="return retornoPosicion('ponencias',organizarPonencia(2))">3</button>
+      </li>
+      <li class="page-item">
+        <button class="page-link" href="javascript:;" onClick=" ;retornoPosicion('ponencias',sumarPaginacionPonencias() )">&raquo;</button>
+      </li>
+                    
+  `;
+  $('#paginacion_ponencias').html(html);
+}
+
+function sumarPaginacionLibros(){
+  if(indexLibros<libros.length-1){
+
+    indexLibros++;
+    return indexLibros;
+  }
+}
+
+function restarPaginacionLibros(){
+  if(indexLibros>0){
+
+    indexLibros--;
+    return indexLibros;
+  }
+}
+function organizarLibro(index){
+  indexlibros=index;
+  return indexLibros
+}
+function siguienteLibro(){
+  let html;
+    html =`
+      <li class="page-item">
+      <button class="page-link" href="javascript:;" onClick=" ;retornoPosicion('libros',restarPaginacionLibros() )">&laquo;</button>
+      </li>
+      <li class="page-item ">
+        <button type="button" class="page-link" href="javascript:;" onClick="return retornoPosicion('libros',organizarLibro(0))">1</button>
+      </li>
+      <li class="page-item">
+        <button type="button" class="page-link" href="javascript:;" onClick="return retornoPosicion('libros',organizarLibro(1))">2</button>
+      </li>                
+      <li class="page-item">
+        <button type="button" class="page-link" href="javascript:;" onClick="return retornoPosicion('libros',organizarLibro(2))">3</button>
+      </li>
+      <li class="page-item">
+        <button class="page-link" href="javascript:;" onClick=" ;retornoPosicion('libros',sumarPaginacionLibros() )">&raquo;</button>
+      </li>
+                    
+  `;
+  $('#paginacion_libros').html(html);
+}
+enlistarLibros().then(()=>{
+ retornoPosicion('articulos',0); 
+ retornoPosicion('libros',0);
+ retornoPosicion('ponencias',0);
+ Paginaciones();
+});
+function Paginaciones(){
+
+  siguienteArticulo();
+  siguientePonencia();
+  siguienteLibro();
+}
