@@ -31,8 +31,11 @@ titulo varchar(30),
 fecha_publicacion date,
 fecha_creacion date,
 fecha_eliminacion date,
+tipo enum ("artículo","ponencia","libro"),
+tema varchar (20),
 activo boolean,
-pago boolean
+pago boolean,
+url_img varchar (100)
 );
 
 Create table registros(
@@ -64,5 +67,24 @@ foreign key (fk_id_contacto) references contactos(id_contacto)
 ############
 insert into usuarios(tipo_documento,num_identificacion,nombre1,nombre2,apellido1,apellido2,telefono,email,password,tipo_usuario,id_img)
 values("Cédula",1000217300,"jean","said","arias","marin",3103767661,"yansaid21@gmail.com","0087","Administrador","https://thumbs.dreamstime.com/b/avatar-de-la-panda-45383457.jpg");
+
+Create table documentos(
+id_documento int auto_increment primary key,
+titulo varchar(30),
+fecha_publicacion date,
+fecha_creacion date not null,
+fecha_eliminacion date,
+tipo enum ("artículo","ponencia","libro"),
+tema varchar (20),
+activo boolean,
+pago boolean,
+url_img varchar (100)
+);
+insert into documentos(titulo,fecha_publicacion,fecha_creacion,tipo,activo,pago,url_img)
+values("Movimiento Científico","2016-08-20","2022-11-25","artículo",1,0,"https://revmovimientocientifico.ibero.edu.co/public/journals/4/cover_issue_101_es_ES.jpg"),
+("Retos Digitales","2018-02-16","2022-11-25","ponencia",1,0,"https://www.ainaralegardon.com/wp-content/uploads/2015/02/Portada-Ponencia-Retos-Digitales.jpg"),
+("El psicoanalista","2002-01-29","2022-11-25","libro",1,0,"https://tercerafundacion.net/imagenes/portada/P-00064247.jpg");
+
+select * from documentos;
 SELECT * FROM usuarios WHERE email = "yansaid21@gmail.com";
 select * from usuarios;

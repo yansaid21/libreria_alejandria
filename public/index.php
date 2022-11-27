@@ -22,6 +22,7 @@ $app->add(TwigMiddleware::create($app, $twig));
 
 
 require __DIR__ . '/../src/config/rutas/usuarios.php';
+require __DIR__ . '/../src/config/rutas/books.php';
 
 
 // Define named route

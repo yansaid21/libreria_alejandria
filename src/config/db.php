@@ -1,4 +1,5 @@
 <?php
+header("Access-Control-Allow-Origin: *");
 class db {
   private $host = 'localhost';
   private $user = 'root';

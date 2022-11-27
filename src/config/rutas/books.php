@@ -4,20 +4,20 @@ use Psr\Http\Message\ServerRequestInterface as Request;
 
 //GET ALL
 
-$app->get('/api/usuarios', function (Request $request,Response $response){
-echo json_encode('llega al php del listado');
+$app->get('/api/documentos', function (Request $request,Response $response){
+//echo json_encode('llega al php de documentos');
 
-  $sql = "SELECT * FROM usuarios";
+  $sql = "SELECT * FROM documentos";
   try{
       $data_base= new db();
       $data_base= $data_base->connectiondb();
       $res= $data_base->query($sql);
-      echo json_encode('antes del if');
+     // echo json_encode('antes del if');
       if($res->rowcount()>0){
-          $usuarios = $res->fetchAll(PDO::FETCH_OBJ);
-          echo json_encode($usuarios);
+          $documentos = $res->fetchAll(PDO::FETCH_OBJ);
+          echo json_encode($documentos);
       }else{
-          echo json_encode('No hay usuarios para mostrar');
+          echo json_encode('No hay documentos para mostrar');
       }
 $res=null;
 $data_base = null;
@@ -29,7 +29,7 @@ $data_base = null;
 });
 
 //GET by email
-$app->get('/api/usuarios/{email_user}', function(Request $request, Response $response, array $args) {
+/*$app->get('/api/usuarios/{email_user}', function(Request $request, Response $response, array $args) {
     $email = $args['email_user'];
     //echo json_encode('este es email en php '.$email);
     $sql = "SELECT * FROM usuarios WHERE email = '$email'";
@@ -95,4 +95,5 @@ $app->get('/api/usuarios/{email_user}', function(Request $request, Response $res
     }
   
     return $response;
-  });
+  });*/
+  

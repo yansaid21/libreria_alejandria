@@ -14,7 +14,7 @@ Pagina_principal
             <div class="card text-white bg-primary mb-3" style="max-width: 20rem;">
               <div class="card-header">Artículos</div>
               <div class="card-body">
-                <p class="card-text"><img src="https://revmovimientocientifico.ibero.edu.co/public/journals/4/cover_issue_101_es_ES.jpg" height="500" width="270"></p>
+                <p class="card-text"><img src="" id="articulos" height="500" width="270"></p>
                 <div class="container">
                   <div class="row">
                     <div class="col md-4">
@@ -37,13 +37,13 @@ Pagina_principal
                       <a class="page-link" href="#">&laquo;</a>
                     </li>
                     <li class="page-item active">
-                      <a class="page-link" href="#">1</a>
+                      <button type="button" class="btn btn-secondary" onClick="return retornoPosicion('articulos',0)">1</button>
                     </li>
                     <li class="page-item">
-                      <a class="page-link" href="#">2</a>
+                      <button type="button" class="btn btn-secondary" onClick="return retornoPosicion('articulos',1)">2</button>
                     </li>
                     <li class="page-item">
-                      <a class="page-link" href="#">3</a>
+                      <a class="page-link" onSubmit="return retornoPosicion(ponencias,2)">3</a>
                     </li>
                     <li class="page-item">
                       <a class="page-link" href="#">&raquo;</a>
@@ -58,7 +58,7 @@ Pagina_principal
               <div class="card-header">Ponencias</div>
               <div class="card-body">
                 <p class="card-text">
-                  <img src="https://www.ainaralegardon.com/wp-content/uploads/2015/02/Portada-Ponencia-Retos-Digitales.jpg" alt="" height="500" width="270">
+                  <img src="https://www.ainaralegardon.com/wp-content/uploads/2015/02/Portada-Ponencia-Retos-Digitales.jpg" id="ponencias" alt="" height="500" width="270">
                 </p>
                 <div class="container">
                   <div class="row">
@@ -103,7 +103,7 @@ Pagina_principal
               <div class="card-header">Libros</div>
               <div class="card-body">
                 <p class="card-text">
-                  <img src="https://tercerafundacion.net/imagenes/portada/P-00064247.jpg" alt="" height="500" width="270">
+                  <img src="https://tercerafundacion.net/imagenes/portada/P-00064247.jpg" id="libros"alt="" height="500" width="270">
                 </p>
                 <div class="container">
                   <div class="row">
@@ -144,5 +144,44 @@ Pagina_principal
             </div>
           </div>
         </div>
+        <div class="card mb-3">
+          <h3 class="card-header">Card header</h3>
+          <div class="card-body">
+            <h5 class="card-title">Special title treatment</h5>
+            <h6 class="card-subtitle text-muted">Support card subtitle</h6>
+          </div>
+          <svg xmlns="http://www.w3.org/2000/svg" class="d-block user-select-none" width="100%" height="200" aria-label="Placeholder: Image cap" focusable="false" role="img" preserveAspectRatio="xMidYMid slice" viewBox="0 0 318 180" style="font-size:1.125rem;text-anchor:middle">
+            <rect width="100%" height="100%" fill="#868e96"></rect>
+            <img id="ponencias_1" src="">
+          </svg>
+          <div class="card-body">
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">Cras justo odio</li>
+            <li class="list-group-item">Dapibus ac facilisis in</li>
+            <li class="list-group-item">Vestibulum at eros</li>
+          </ul>
+          <div class="card-body">
+            <a href="#" class="card-link">Card link</a>
+            <a href="#" class="card-link">Another link</a>
+          </div>
+          <div class="card-footer text-muted">
+            2 days ago
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-body">
+            <h4 class="card-title">Card title</h4>
+            <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <a href="#" class="card-link">Card link</a>
+            <a href="#" class="card-link">Another link</a>
+          </div>
+        </div>
       </div>
 {%endblock%}
+{%block script%}
+{{ parent() }}
+<script src="{{base_path()}}/../src/scripts/entities/books/getBooks.js"></script>
+{% endblock %}
