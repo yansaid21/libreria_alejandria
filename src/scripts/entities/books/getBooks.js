@@ -12,30 +12,27 @@ function mostrarLibros() {
  ponencias=[];
  libros=[];
   return new Promise((resolve,reject) => {
-    setTimeout(() => {
-
-      $.get(`${urlbase}/../api/documentos`, function( data ) {
-       // console.log("lista de libros : ", data);
-       for(var i=0;i<data.length;i++){
-         let dataBook= data[i];
-        if(dataBook.tipo=="artículo"){
-          articulos.push(dataBook)
-          resolve(articulos); 
-          console.log("articulos push: ", articulos);
-        }
-        if(dataBook.tipo=="ponencia"){
-          ponencias.push(dataBook)   
-          resolve(ponencias); 
-          
-        }
-        if(dataBook.tipo=="libro"){
-          libros.push(dataBook)
-          resolve(libros); 
-          
-        }
-       }
-      },'json');
-    },500)
+    $.get(`${urlbase}/../api/documentos`, function( data ) {
+     // console.log("lista de libros : ", data);
+     for(var i=0;i<data.length;i++){
+       let dataBook= data[i];
+      if(dataBook.tipo=="artículo"){
+        articulos.push(dataBook)
+        resolve(articulos); 
+        console.log("articulos push: ", articulos);
+      }
+      if(dataBook.tipo=="ponencia"){
+        ponencias.push(dataBook)   
+        resolve(ponencias); 
+        
+      }
+      if(dataBook.tipo=="libro"){
+        libros.push(dataBook)
+        resolve(libros); 
+        
+      }
+     }
+    },'json');
     })
     
  
@@ -63,8 +60,7 @@ function mostrarLibros() {
 }
 
 function elementosPrincipales(){
-  retornoPosicion('articulos',0);
-  
+  retornoPosicion('articulos',0); 
   retornoPosicion('libros',0);
   retornoPosicion('ponencias',0);
 
