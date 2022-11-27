@@ -1,25 +1,417 @@
 {%extends 'layout2.html'%}
 {%block title%}
-Inicio_Sesion
+misDocumentos
 {%endblock%}
 {%block body%}
-    <br><br><br><br>
+    <br><br><br><br><br>
     <div class="container">
         <div class="row">
             <center>
                 <h1>Mis Documentos</h1>
             </center>
         </div>
+        <br>
         <div class="row">
             <br>
-            <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
-                <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked="">
-                <label class="btn btn-outline-primary" for="btnradio1"><fonetifytext original="Radio 1" class="notranslate" style="contain: layout style; display: inline !important; float: none !important;"><fonetifyword lang="en" original="Radio" part-of-speech-mapped="NNP,NNP,NNP,NNP,NNP" class="notranslate" style="display: inline !important; float: none !important;">Radio</fonetifyword> 1</fonetifytext></label>
-                <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off" checked="">
-                <label class="btn btn-outline-primary" for="btnradio2"><fonetifytext original="Radio 2" class="notranslate" style="contain: layout style; display: inline !important; float: none !important;"><fonetifyword lang="en" original="Radio" part-of-speech-mapped="NNP,NNP,NNP,NNP,NNP" class="notranslate" style="display: inline !important; float: none !important;">Radio</fonetifyword> 2</fonetifytext></label>
-                <input type="radio" class="btn-check" name="btnradio" id="btnradio3" autocomplete="off" checked="">
-                <label class="btn btn-outline-primary" for="btnradio3"><fonetifytext original="Radio 3" class="notranslate" style="contain: layout style; display: inline !important; float: none !important;"><fonetifyword lang="en" original="Radio" part-of-speech-mapped="NNP,NNP,NNP,NNP,NNP" class="notranslate" style="display: inline !important; float: none !important;">Radio</fonetifyword> 3</fonetifytext></label>
-              </div>
+            <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                <div class="col-md-3">
+                    <li class="nav-item" role="presentation">
+                        <button class="btn btn-secondary nav-link active" id="pills-todos-tab" data-bs-toggle="pill" data-bs-target="#pills-todos" type="button" role="tab" aria-controls="pills-home" aria-selected="true">Todos</button>
+                    </li>
+                </div>
+                <div class="col-md-3">
+                    <li class="nav-item" role="presentation">
+                        <button class="btn btn-secondary nav-link" id="pills-libros-tab" data-bs-toggle="pill" data-bs-target="#pills-libros" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Libros</button>
+                    </li>
+                </div>
+                <div class="col-md-3">
+                    <li class="nav-item" role="presentation">
+                        <button class="btn btn-secondary nav-link" id="pills-articulos-tab" data-bs-toggle="pill" data-bs-target="#pills-articulos" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Artículos</button>
+                    </li>
+                </div>
+                <div class="col-md-3">
+                    <li class="nav-item" role="presentation">
+                        <button class="btn btn-secondary nav-link" id="pills-ponencias-tab" data-bs-toggle="pill" data-bs-target="#pills-ponencias" type="button" role="tab" aria-controls="pills-disabled" aria-selected="false">Ponencias</button>
+                    </li>
+                </div>
+            </ul>
+        </div>
+        <div class="tab-content" id="pills-tabContent">
+            <!-- contenido del boton_todos -->
+            <div class="tab-pane fade show active" id="pills-todos" role="tabpanel" aria-labelledby="pills-home-tab" tabindex="0">
+                <div class="row" id="row_todos">
+                    <div class="col-md-3">
+                        <br><br>
+                        <div class="card text-white bg-primary mb-3" style="max-width: 20rem;">
+                            <div class="card-header"></div>
+                            <div class="card-body">
+                                <p class="card-text">
+                                    <img src="https://tercerafundacion.net/imagenes/portada/P-00064247.jpg" alt="" height="500" width="225">
+                                </p>
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col md-1">
+                                            <button type="button" class="btn button" onclick="return eliminar_documento()">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
+                                                    <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z"/>
+                                                </svg>
+                                            </button>
+                                        </div>
+                                        <div class="col md-1">
+                                            <button type="button" class="btn button" onclick="return descargar_documento()">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-download" viewBox="0 0 16 16">
+                                                    <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/>
+                                                    <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"/>
+                                                </svg>
+                                            </button>
+                                        </div>
+                                        <br>
+                                        <div class="col md-1">
+                                            <button type="button" class="btn btn-outline-secondary">Leer</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <br><br>
+                        <div class="card text-white bg-primary mb-3" style="max-width: 20rem;">
+                            <div class="card-header"></div>
+                            <div class="card-body">
+                                <p class="card-text">
+                                    <img src="https://www.penguinlibros.com/co/354291-large_default/harry-potter-y-la-piedra-filosofal.jpg" alt="" height="500" width="225">
+                                </p>
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col md-1">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
+                                                <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z"/>
+                                            </svg>
+                                        </div>
+                                        <div class="col md-1">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-download" viewBox="0 0 16 16">
+                                                <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/>
+                                                <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"/>
+                                            </svg>
+                                        </div>
+                                        <div class="col md-1">
+                                            <button type="button" class="btn btn-outline-secondary">Leer</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <br><br>
+                        <div class="card text-white bg-primary mb-3" style="max-width: 20rem;">
+                            <div class="card-header"></div>
+                            <div class="card-body">
+                                <p class="card-text">
+                                    <img src="https://www.ainaralegardon.com/wp-content/uploads/2015/02/Portada-Ponencia-Retos-Digitales.jpg" alt="" height="500" width="225">
+                                </p>
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col md-1">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
+                                                <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z"/>
+                                            </svg>
+                                        </div>
+                                        <div class="col md-1">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-download" viewBox="0 0 16 16">
+                                                <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/>
+                                                <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"/>
+                                            </svg>
+                                        </div>
+                                        <div class="col md-1">
+                                            <button type="button" class="btn btn-outline-secondary">Leer</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <br><br>
+                        <div class="card text-white bg-primary mb-3" style="max-width: 20rem;">
+                            <div class="card-header"></div>
+                            <div class="card-body">
+                                <p class="card-text">
+                                    <img src="https://revmovimientocientifico.ibero.edu.co/public/journals/4/cover_issue_101_es_ES.jpg" alt="" height="500" width="225">
+                                </p>
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col md-1">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
+                                                <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z"/>
+                                            </svg>
+                                        </div>
+                                        <div class="col md-1">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-download" viewBox="0 0 16 16">
+                                                <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/>
+                                                <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"/>
+                                            </svg>
+                                        </div>
+                                        <div class="col md-1">
+                                            <button type="button" class="btn btn-outline-secondary">Leer</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- contenido del boton_libros -->
+            <div class="tab-pane fade" id="pills-libros" role="tabpanel" aria-labelledby="pills-profile-tab" tabindex="0">
+                <div class="row">
+                    <ul class="nav nav-pills mb-3" id="pills-tab-libros" role="tablist">
+                        <div class="col-md-3">
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link active btn btn-dark nav-link-all" id="pills-todos-tab" data-bs-toggle="pill" data-bs-target="#pills-todos-libros" type="button" role="tab" aria-controls="pills-home" aria-selected="true">Todos</button>
+                            </li>
+                        </div>
+                        <div class="col-md-3">
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link btn btn-dark nav-link-all" id="pills-romance-tab" data-bs-toggle="pill" data-bs-target="#pills-romance" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Romance</button>
+                            </li>
+                        </div>
+                        <div class="col-md-3">
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link btn btn-dark nav-link-all" id="pills-ficcion-tab" data-bs-toggle="pill" data-bs-target="#pills-ficcion" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Ficción</button>
+                            </li>
+                        </div>
+                        <div class="col-md-3">
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link btn btn-dark nav-link-all" id="pills-infantil-tab" data-bs-toggle="pill" data-bs-target="#pills-infantil" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Infantil</button>
+                            </li>
+                        </div>
+                    </ul>
+                </div>
+                <div class="tab-content" id="pills-tabContent-libros">
+                    <div class="tab-pane fade show active" id="pills-todos-libros" role="tabpanel" aria-labelledby="pills-home-tab" tabindex="0">
+                        AQUÍ VAN TODOS LOS LIBROS DE TODOS LOS GÉNEROS
+                        <div class="row" id="row_articulos">
+                            <div class="col-md-3">
+                                <br><br>
+                                <div class="card text-white bg-primary mb-3" style="max-width: 20rem;">
+                                    <div class="card-header"></div>
+                                    <div class="card-body">
+                                        <p class="card-text">
+                                            <img src="https://tercerafundacion.net/imagenes/portada/P-00064247.jpg" alt="" height="500" width="225">
+                                        </p>
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="col md-1">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
+                                                        <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z"/>
+                                                    </svg>
+                                                </div>
+                                                <div class="col md-1">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-download" viewBox="0 0 16 16">
+                                                        <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/>
+                                                        <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"/>
+                                                    </svg>
+                                                </div>
+                                                <div class="col md-1">
+                                                    <button type="button" class="btn btn-outline-secondary">Leer</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <br><br>
+                                <div class="card text-white bg-primary mb-3" style="max-width: 20rem;">
+                                    <div class="card-header"></div>
+                                    <div class="card-body">
+                                        <p class="card-text">
+                                            <img src="https://www.penguinlibros.com/co/354291-large_default/harry-potter-y-la-piedra-filosofal.jpg" alt="" height="500" width="225">
+                                        </p>
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="col md-1">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
+                                                        <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z"/>
+                                                    </svg>
+                                                </div>
+                                                <div class="col md-1">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-download" viewBox="0 0 16 16">
+                                                        <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/>
+                                                        <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"/>
+                                                    </svg>
+                                                </div>
+                                                <div class="col md-1">
+                                                    <button type="button" class="btn btn-outline-secondary">Leer</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="pills-romance" role="tabpanel" aria-labelledby="pills-profile-tab" tabindex="0">
+                        AQUÍ VAN LOS LIBROS DE ROMANCE
+                    </div>
+                    <div class="tab-pane fade" id="pills-ficcion" role="tabpanel" aria-labelledby="pills-contact-tab" tabindex="0">
+                        AQUÍ VAN LOS LIBROS DE FICCIÓN
+                        <div class="row" id="row_articulos">
+                            <div class="col-md-3">
+                                <br><br>
+                                <div class="card text-white bg-primary mb-3" style="max-width: 20rem;">
+                                    <div class="card-header"></div>
+                                    <div class="card-body">
+                                        <p class="card-text">
+                                            <img src="https://tercerafundacion.net/imagenes/portada/P-00064247.jpg" alt="" height="500" width="225">
+                                        </p>
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="col md-1">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
+                                                        <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z"/>
+                                                    </svg>
+                                                </div>
+                                                <div class="col md-1">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-download" viewBox="0 0 16 16">
+                                                        <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/>
+                                                        <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"/>
+                                                    </svg>
+                                                </div>
+                                                <div class="col md-1">
+                                                    <button type="button" class="btn btn-outline-secondary">Leer</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="pills-infantil" role="tabpanel" aria-labelledby="pills-disabled-tab" tabindex="0">
+                        AQUÍ VAN LOS LIBROS INFANTILES
+                        <div class="row" id="row_articulos">
+                            <div class="col-md-3">
+                                <br><br>
+                                <div class="card text-white bg-primary mb-3" style="max-width: 20rem;">
+                                    <div class="card-header"></div>
+                                    <div class="card-body">
+                                        <p class="card-text">
+                                            <img src="https://www.penguinlibros.com/co/354291-large_default/harry-potter-y-la-piedra-filosofal.jpg" alt="" height="500" width="225">
+                                        </p>
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="col md-1">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
+                                                        <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z"/>
+                                                    </svg>
+                                                </div>
+                                                <div class="col md-1">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-download" viewBox="0 0 16 16">
+                                                        <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/>
+                                                        <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"/>
+                                                    </svg>
+                                                </div>
+                                                <div class="col md-1">
+                                                    <button type="button" class="btn btn-outline-secondary">Leer</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+            </div>
+            <!-- contenido del boton_articulos -->
+            <div class="tab-pane fade" id="pills-articulos" role="tabpanel" aria-labelledby="pills-contact-tab" tabindex="0">
+                <div class="row" id="row_articulos">
+                    <div class="col-md-3">
+                        <br><br>
+                        <div class="card text-white bg-primary mb-3" style="max-width: 20rem;">
+                            <div class="card-header"></div>
+                            <div class="card-body">
+                                <p class="card-text">
+                                    <img src="https://revmovimientocientifico.ibero.edu.co/public/journals/4/cover_issue_101_es_ES.jpg" alt="" height="500" width="225">
+                                </p>
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col md-1">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
+                                                <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z"/>
+                                            </svg>
+                                        </div>
+                                        <div class="col md-1">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-download" viewBox="0 0 16 16">
+                                                <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/>
+                                                <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"/>
+                                            </svg>
+                                        </div>
+                                        <div class="col md-1">
+                                            <button type="button" class="btn btn-outline-secondary">Leer</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- contenido del boton_ponencias -->
+            <div class="tab-pane fade" id="pills-ponencias" role="tabpanel" aria-labelledby="pills-contact-tab" tabindex="0">
+                <div class="row" id="row_ponencias">
+                    <div class="col-md-3">
+                        <br><br>
+                        <div class="card text-white bg-primary mb-3" style="max-width: 20rem;">
+                            <div class="card-header"></div>
+                            <div class="card-body">
+                                <p class="card-text">
+                                    <img src="https://www.ainaralegardon.com/wp-content/uploads/2015/02/Portada-Ponencia-Retos-Digitales.jpg" alt="" height="500" width="225">
+                                </p>
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col md-1">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
+                                                <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z"/>
+                                            </svg>
+                                        </div>
+                                        <div class="col md-1">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-download" viewBox="0 0 16 16">
+                                                <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/>
+                                                <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"/>
+                                            </svg>
+                                        </div>
+                                        <div class="col md-1">
+                                            <button type="button" class="btn btn-outline-secondary">Leer</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br><br><br>
+        <div class="row">
+            <figure class="text-center">
+                <blockquote class="blockquote">
+                    <p class="mb-0"><h3>"Un lector vive mil vidas antes de morir. La persona que nunca lee vive solamente una. "</h3></p>
+                </blockquote>
+                <figcaption class="blockquote-footer"><fonetifytext original="
+                  Someone famous in " class="notranslate" style="contain: layout style; display: inline !important; float: none !important;">
+                  <fonetifyword><i>George R. R. Martin</i></fonetifyword>
+                </figcaption>
+            </figure>
         </div>
     </div>
 {%endblock%}
+
+{%block script%}
+{{ parent() }}
+
+<script src="{{ base_path() }}/../src/scripts/front/campo_vacio.js"></script>
+{% endblock %}

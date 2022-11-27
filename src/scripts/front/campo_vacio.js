@@ -19,7 +19,7 @@ console.log("llegue mi perro ");
             color: 'white',
             text: 'Vuelve a escribirla',
             showConfirmButton: true
-          })
+        })
     } else if (texto_primer_nombre != "" && texto_primer_apellido != "" && texto_numero_documento != "" && texto_telefono != "" && texto_email != "" && contrasena1 != "" && contrasena2 != ""){
         crearUsuario();
         Swal.fire({
@@ -32,38 +32,63 @@ console.log("llegue mi perro ");
             showConfirmButton:false,
             footer: '<a class="btn btn-primary" href="/libreria_alejandria/public">Iniciar Sesión</a>'
         })
+    } else {
+        Swal.fire({
+            icon: 'error',
+            iconColor: '#6f42c1',
+            background: '#1a0933',
+            title: 'No has llenado todos los campos',
+            color: 'white',
+            text: 'Verifica que has llenado todos los campos obligatorior (*) ',
+            showConfirmButton:true
+        })
     }
     return false;
 }
 
 
 
-function validarEnteroEnCampo() {
-    numero_identidad = document.getElementById("numero_identidad").value;
-    ni = parseInt(numero_identidad);
-    console.log("numero documento  -> "+ ni[2]);
-    if (isNaN(ni)) {
-        console.log("numero documento 1 -> "+ ni.typeof);
-        return false;
-    } else {
-        //numero_identidad.value = valueInt;
-      console.log("numero documento 2 -> "+ ni.typeof);
-      return true;
+function eliminar_documento(){
+    Swal.fire({
+        title: '¿Estás seguro de eliminar este documento?',
+        text: "¡No habrá vuelta atrás!",
+        icon: 'warning',
+        iconColor: '#6f42c1',
+        color: 'white',
+        background: '#1a0933',
+        showCancelButton: true,
+        confirmButtonColor: '#ea39b8',
+        cancelButtonColor: '#e44c55',
+        confirmButtonText: 'Sí, quiero eliminarlo',
+        cancelButtonText: 'Cancelar'
+    }).then((result) => {
+    if (result.isConfirmed) {
+        Swal.fire({
+        icon: 'warning',
+        iconColor: '#6f42c1',
+        color: 'white',
+        background: '#1a0933',
+        icon: 'success',
+        title: 'Eliminado',
+        text: 'Tu documento ha sido eliminado',
+        showConfirmButton: true
+        })
     }
-  }
+    })
+}
 
-  function validarEntero(valor){
-    //intento convertir a entero.
-   //si era un entero no le afecta, si no lo era lo intenta convertir
-   numero_identidad = document.getElementById("numero_identidad").value;
-   valor = parseInt(numero_identidad)
-
-    //Compruebo si es un valor numérico
-    if (isNaN(valor)) {
-          //entonces (no es numero) devuelvo el valor cadena vacia
-          return ""
-    }else{
-          //En caso contrario (Si era un número) devuelvo el valor
-          return valor
-    }
+function descargar_documento(){
+    Swal.fire({
+        title: '¿Estás seguro de descargar este documento?',
+        text: "¡Tendrás que pagar por él!",
+        icon: 'warning',
+        iconColor: '#6f42c1',
+        color: 'white',
+        background: '#1a0933',
+        showCancelButton: true,
+        confirmButtonColor: '#ea39b8',
+        cancelButtonColor: '#e44c55',
+        confirmButtonText: 'Sí, quiero descargarlo',
+        cancelButtonText: 'Cancelar'
+    })
 }
