@@ -14,7 +14,7 @@ Pagina_principal
             <div class="card text-white bg-primary mb-3" style="max-width: 20rem;">
               <div class="card-header">Artículos</div>
               <div class="card-body">
-                <p class="card-text"><img src="https://revmovimientocientifico.ibero.edu.co/public/journals/4/cover_issue_101_es_ES.jpg" height="500" width="270"></p>
+                <p class="card-text"><img src="" id="articulos" height="500" width="270"></p>
                 <div class="container">
                   <div class="row">
                     <div class="col md-4">
@@ -32,22 +32,7 @@ Pagina_principal
                 </div>
                 <br>
                 <div>
-                  <ul class="pagination pagination-sm">
-                    <li class="page-item disabled">
-                      <a class="page-link" href="#">&laquo;</a>
-                    </li>
-                    <li class="page-item active">
-                      <a class="page-link" href="#">1</a>
-                    </li>
-                    <li class="page-item">
-                      <a class="page-link" href="#">2</a>
-                    </li>
-                    <li class="page-item">
-                      <a class="page-link" href="#">3</a>
-                    </li>
-                    <li class="page-item">
-                      <a class="page-link" href="#">&raquo;</a>
-                    </li>
+                  <ul class="pagination pagination-sm" id="paginacion_articulos">  
                   </ul>
                 </div>
               </div>
@@ -58,7 +43,7 @@ Pagina_principal
               <div class="card-header">Ponencias</div>
               <div class="card-body">
                 <p class="card-text">
-                  <img src="https://www.ainaralegardon.com/wp-content/uploads/2015/02/Portada-Ponencia-Retos-Digitales.jpg" alt="" height="500" width="270">
+                  <img src="https://www.ainaralegardon.com/wp-content/uploads/2015/02/Portada-Ponencia-Retos-Digitales.jpg" id="ponencias" alt="" height="500" width="270">
                 </p>
                 <div class="container">
                   <div class="row">
@@ -77,22 +62,7 @@ Pagina_principal
                 </div>
                 <br>
                 <div>
-                  <ul class="pagination pagination-sm">
-                    <li class="page-item disabled">
-                      <a class="page-link" href="#">&laquo;</a>
-                    </li>
-                    <li class="page-item active">
-                      <a class="page-link" href="#">1</a>
-                    </li>
-                    <li class="page-item">
-                      <a class="page-link" href="#">2</a>
-                    </li>
-                    <li class="page-item">
-                      <a class="page-link" href="#">3</a>
-                    </li>
-                    <li class="page-item">
-                      <a class="page-link" href="#">&raquo;</a>
-                    </li>
+                  <ul class="pagination pagination-sm" id="paginacion_ponencias"> 
                   </ul>
                 </div>
               </div>
@@ -103,7 +73,7 @@ Pagina_principal
               <div class="card-header">Libros</div>
               <div class="card-body">
                 <p class="card-text">
-                  <img src="https://tercerafundacion.net/imagenes/portada/P-00064247.jpg" alt="" height="500" width="270">
+                  <img src="https://tercerafundacion.net/imagenes/portada/P-00064247.jpg" id="libros"alt="" height="500" width="270">
                 </p>
                 <div class="container">
                   <div class="row">
@@ -122,27 +92,17 @@ Pagina_principal
                 </div>
                 <br>
                 <div>
-                  <ul class="pagination pagination-sm">
-                    <li class="page-item disabled">
-                      <a class="page-link" href="#">&laquo;</a>
-                    </li>
-                    <li class="page-item active">
-                      <a class="page-link" href="#">1</a>
-                    </li>
-                    <li class="page-item">
-                      <a class="page-link" href="#">2</a>
-                    </li>
-                    <li class="page-item">
-                      <a class="page-link" href="#">3</a>
-                    </li>
-                    <li class="page-item">
-                      <a class="page-link" href="#">&raquo;</a>
-                    </li>
+                  <ul class="pagination pagination-sm" id="paginacion_libros"> 
                   </ul>
                 </div>
               </div>
             </div>
           </div>
+        </div> 
         </div>
       </div>
 {%endblock%}
+{%block script%}
+{{ parent() }}
+<script src="{{base_path()}}/../src/scripts/entities/books/getBooks.js"></script>
+{% endblock %}

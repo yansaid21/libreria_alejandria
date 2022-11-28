@@ -4,35 +4,36 @@ Registro_Usuarios
 {%endblock%}
 
 {%block body %}
-<div class="container">
-    <div class="row">
-        <div class="col-md-0">
-            <div class=" text-center">
-                <h3>Usuario</h3>
-                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
-                    <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
-                </svg>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-0">
+                <div class="col-md-12 text-center">
+                    <h3>Usuario</h3>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
+                        <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+                    </svg>
+                </div>
             </div>
         </div>
     </div>
-    <form method="GET" id="frmRegistrarUsuario" onsubmit="return crearUsuario(this)">     
+    <form method="POST" id="frmRegistrarUsuario" onSubmit="return verificar_contraseña_campos()">     
         <div class="row">
             <div class="col-md-3 ">
                 <div class="form-group" style="margin-top: 20px;">
-                    <label for="tipo_documento" class="form-label mt-4">Tipo documento *</label>
-                    <select class="form-select" id="tipo_documento" required>
+                    <label for="select_tipo_documento" class="form-label mt-4">Tipo documento</label>
+                    <select class="form-select" id="select_tipo_documento">
                       <option>Cédula</option>
                       <option>Tarjeta de identidad</option>
                       <option>Pasaporte</option>
                     </select>
                 </div>           
                 <div class="form-group" style="margin-top: 5px;">
-                    <label for="primer_nombre" class="form-label mt-4">Primer Nombre *</label>
-                    <input type="" class="form-control" id="primer_nombre" aria-describedby="emailHelp" placeholder="" required>
+                    <label for="primer_nombre" class="form-label mt-4">Primer Nombre</label>
+                    <input type="" class="form-control" id="primer_nombre" aria-describedby="emailHelp" placeholder="">
                 </div>
                 <div class="form-group" style="margin-top: 5px;">
-                    <label for="primer_apellido" class="form-label mt-4">Primer Apellido *</label>
-                    <input type="" class="form-control" id="primer_apellido" aria-describedby="emailHelp" placeholder="" required>
+                    <label for="primer_apellido" class="form-label mt-4">Primer Apellido</label>
+                    <input type="" class="form-control" id="primer_apellido" aria-describedby="emailHelp" placeholder="">
                 </div>
                 <div class="form-group" style="margin-top: 5px;">
                     <label for="telefono" class="form-label mt-4">Teléfono *</label>
@@ -74,6 +75,7 @@ Registro_Usuarios
                 <img src="https://previews.123rf.com/images/jpgon/jpgon1409/jpgon140900160/31731432-ilustraci%C3%B3n-de-un-avatar-gato-de-dibujos-animados.jpg?fj=1" alt="" width="140" height="140" id="avatar_gato">
                 <img src="https://thumbs.dreamstime.com/b/avatar-de-la-panda-45383457.jpg" alt="" width="140" height="140" id="avatar_panda">
                 <img src="https://thumbs.dreamstime.com/b/avatar-del-elefante-97751404.jpg" alt="" width="140" height="140" id="avatar_elefante">
+                <input type="text" id="avatar_elegido" style="display:none">
             </div>
             <div class="col-md-1"></div>
             <div class="col-md-2">
@@ -96,26 +98,28 @@ Registro_Usuarios
                 <br>
                 <br>
                 <br>
-                <button type="submit" class="btn btn-primary btn-sm" id="btn_avatar_elefante" onclick="return desaparecer_avatar_gato_panda()">Elegir elefante</button>
+                <button type="button" class="btn btn-primary btn-sm" id="btn_avatar_elefante" onclick="return desaparecer_avatar_gato_panda()">Elegir elefante</button>
             </div>
+            
         </div>
         <br>
         <div class="row">
             <div class="col-md-2"></div>
             <div class="col-md-6">
                 <div class="row w-50 align-items-center">
-                    <button type="submit" class="btn btn-info" style="margin-top: 20px;"" onclick="return verificar_contraseña_campos()">Registrar</button>
+                    <button type="submit" class="btn btn-info" style="margin-top: 20px;" >Registrar</button>
                 </div>
             </div>
         </div>
     </form>
-
-</div>
+    </div>
 {% endblock %}
 
 
 {%block script%}
 {{ parent() }}
 
-<script src="{{ base_path() }}/../src/scripts/front/campo_vacio.js"></script>
+<script src="{{ base_path() }}/../src/scripts/front/campo_vacio.js" type="module"></script>
+<script src="{{ base_path() }}/../src/scripts/front/ocultar_avatares.js"></script>
+
 {% endblock %}

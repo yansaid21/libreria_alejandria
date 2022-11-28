@@ -16,20 +16,21 @@ $app->setBasePath('/libreria_alejandria/public');
 
 // Create Twig
 $twig = Twig::create(__DIR__ . '/../src/templates', ['cache' => false]);
-
 // Add Twig-View Middleware
 $app->add(TwigMiddleware::create($app, $twig));
-require __DIR__ . '/../src/config/rutas/usuario.php';
+
+
+
+require __DIR__ . '/../src/config/rutas/usuarios.php';
+require __DIR__ . '/../src/config/rutas/books.php';
+require __DIR__ . '/../src/config/rutas/registros.php';
+
+
 // Define named route
 $app->get('/', function (Request $request,Response $response) {
     $view = Twig::fromRequest($request);
     return $view->render($response, 'InicioSesion.html');
 })->setName('inicioSesion');
-
-$app->get('/inicio', function ($request, $response, $args) {
-    $view = Twig::fromRequest($request);
-    return $view->render($response, 'InicioSesion.html');
-})->setName('inicio');
 
 $app->get('/registrarUsuarios', function ($request, $response, $args) {
     $view = Twig::fromRequest($request);
@@ -56,18 +57,12 @@ $app->get('/comentarios', function ($request, $response, $args) {
     return $view->render($response, 'comentarios.html');
 })->setName('comentarios');
 
-$app->get('/administrador', function ($request, $response, $args) {
-    $view = Twig::fromRequest($request);
-    return $view->render($response, 'administrador.html');
-})->setName('administrador');
-
-
-$app->get('/PaginaPrincipal.html', function ($request, $response, $args) {
+$app->get('/{email_user}/PaginaPrincipal', function ($request, $response, $args) {
     $view = Twig::fromRequest($request);
     return $view->render($response, 'PaginaPrincipal.html');
 })->setName('paginaPrincipal');
 
-$app->get('/documentosUsuarios', function ($request, $response, $args) {
+$app->get('/{email_user}/documentosUsuarios', function ($request, $response, $args) {
     $view = Twig::fromRequest($request);
     return $view->render($response, 'documentosUsuarios.html');
 })->setName('documentosUsuarios');
