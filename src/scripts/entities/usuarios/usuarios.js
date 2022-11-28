@@ -21,7 +21,8 @@ function inicioSesion(){
     console.log("log del usuarios.js: ", dataUsr);
     //console.log("contraseña de la database: ", dataUsr.password);
     console.log("contraseña input",document.getElementById("InputContrasena").value.trim() );
-    var url= "/libreria_alejandria/public/PaginaPrincipal/" +email_user; 
+    var url= baseUrl+email_user+"/PaginaPrincipal"; 
+    console.log(url);
     if (dataUsr=="" || document.getElementById("InputContrasena").value.trim() == dataUsr.password )
      {
       location.href = url;

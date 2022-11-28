@@ -39,9 +39,6 @@ function enlistarLibros() {
      }
     },'json');
     })
-    
- 
- 
 }
 function retornoPosicion(lista,posicion){
   let dataBook;

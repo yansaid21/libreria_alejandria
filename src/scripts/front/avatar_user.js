@@ -1,10 +1,11 @@
 let baseUrl = "http://localhost/libreria_alejandria/public/";
-let urllocal=window.location.href;
+const urllocal=window.location.href;
+let arr=urllocal.split('/');
+email_user= (arr[5]);
+
 //console.log("llega al java avatar_user ");
 function poner_avatar(){
-    let arr=urllocal.split('/');
-    email_user= (arr[6]);
-   // console.log("email: ",email_user);
+    //console.log("email: ",email_user);
     $.get(`${baseUrl}/../api/usuarios/${email_user}`, function (data) {
         let dataUsr = data[0];
      //   console.log("lista de usuarios : ", dataUsr);
@@ -15,5 +16,9 @@ function poner_avatar(){
       },'json');
     
       return false; 
+}
+function rutaDocumentos(){
+  var urlDocumentos=urllocal+"/DocumentosUsuarios";
+document.getElementById('ruta_documentos').href=urlDocumentos;
 }
 poner_avatar();

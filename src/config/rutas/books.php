@@ -28,12 +28,16 @@ $data_base = null;
     return $response;
 });
 
-//GET by email
-/*$app->get('/api/usuarios/{email_user}', function(Request $request, Response $response, array $args) {
-    $email = $args['email_user'];
-    //echo json_encode('este es email en php '.$email);
-    $sql = "SELECT * FROM usuarios WHERE email = '$email'";
-    try {
+//GET by registro
+$app->get('/api/registros/documentos/{email_user}', function(Request $request, Response $response, array $args) {
+  $email = $args['email_user'];
+  //echo json_encode('este es email en php '.$email);
+  $sql = "SELECT * FROM documentos as do 
+  inner join usuarios as u
+  inner join registros as re
+  on u.num_identificacion = re.fk_num_identificacion
+  WHERE email = '$email'";
+  try {
       $data_base = new db();
       $data_base = $data_base->connectiondb();
       $res = $data_base->query($sql);
@@ -51,7 +55,8 @@ $data_base = null;
   
     return $response;
   });
-
+  
+  /*
   //POST NEW USER
   $app->post('/api/usuarios/nuevo', function(Request $request, Response $response, array $args) {
     $tipo_documento = $request->getParsedBody()['tipo_documento'];

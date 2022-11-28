@@ -23,6 +23,7 @@ $app->add(TwigMiddleware::create($app, $twig));
 
 require __DIR__ . '/../src/config/rutas/usuarios.php';
 require __DIR__ . '/../src/config/rutas/books.php';
+require __DIR__ . '/../src/config/rutas/registros.php';
 
 
 // Define named route
@@ -56,12 +57,12 @@ $app->get('/comentarios', function ($request, $response, $args) {
     return $view->render($response, 'comentarios.html');
 })->setName('comentarios');
 
-$app->get('/PaginaPrincipal/{email_user}', function ($request, $response, $args) {
+$app->get('/{email_user}/PaginaPrincipal', function ($request, $response, $args) {
     $view = Twig::fromRequest($request);
     return $view->render($response, 'PaginaPrincipal.html');
 })->setName('paginaPrincipal');
 
-$app->get('/documentosUsuarios', function ($request, $response, $args) {
+$app->get('/{email_user}/documentosUsuarios', function ($request, $response, $args) {
     $view = Twig::fromRequest($request);
     return $view->render($response, 'documentosUsuarios.html');
 })->setName('documentosUsuarios');
