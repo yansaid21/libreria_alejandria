@@ -1,6 +1,6 @@
 {%extends 'layout.html'%}
 {%block title%}
-Comentarios
+Administrador
 {%endblock%}
 
 {%block body %}
@@ -9,12 +9,68 @@ Comentarios
         <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V8.207l.646.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.707 1.5ZM13 7.207V13.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V7.207l5-5 5 5Z"/>
     </svg>
 </a>
-
     <div class="container">
         <div class="row">
             <div class="col md-4"></div>
             <div class="col md-12">
                 <h2>Administrador</h2>
+                <br><br>
+            </div>
+                <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="pills-usuarios-tab" data-bs-toggle="pill" data-bs-target="#pills-usuarios" type="button" role="tab" aria-controls="pills-usuarios" aria-selected="true">Usuarios</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="pills-permisos-tab" data-bs-toggle="pill" data-bs-target="#pills-permisos" type="button" role="tab" aria-controls="pills-permisos" aria-selected="false">Permisos</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="pills-ayudas-tab" data-bs-toggle="pill" data-bs-target="#pills-ayudas" type="button" role="tab" aria-controls="pills-ayudas" aria-selected="false">Ayudas</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="pills-opiniones-tab" data-bs-toggle="pill" data-bs-target="#pills-opiniones" type="button" role="tab" aria-controls="pills-opiniones" aria-selected="false">Opiniones</button>
+                    </li>                    
+                </ul>
+              <div class="tab-content" id="pills-tabContent">
+                <div class="tab-pane fade show active" id="pills-usuarios" role="tabpanel" aria-labelledby="pills-usuarios-tab" tabindex="0">
+                    <h2 class="text-center">Información de usuarios</h2>
+                    <div class="table-responsive table-hover" id="tabla_usuarios">
+                        <table class="table">
+                            <thead class="text-muted">
+                                  <th class="text-center">Primer nombre</th>
+                                  <th class="text-center">Segundo nombre</th>
+                                  <th class="text-center">Primer apeliido</th>
+                                  <th class="text-center">Segundo apellido</th>
+                                  <th class="text-center">Tipo documento</th>
+                                  <th class="text-center">Documento</th>
+                                  <th class="text-center">Telefono</th>
+                                  <th class="text-center">Email</th>
+                                  <th class="text-center">Tipo de usuario</th>
+                                  <th class="text-center">Permiso</th>
+                            </thead>
+                            <tbody>
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="pills-opiniones" role="tabpanel" aria-labelledby="pills-home-tab" tabindex="0">
+                    <div class="d-flex align-items-start">
+                        <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                          <button class="nav-link active" id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-home" type="button" role="tab" aria-controls="v-pills-home" aria-selected="true">Home</button>
+                          <button class="nav-link" id="v-pills-profile-tab" data-bs-toggle="pill" data-bs-target="#v-pills-profile" type="button" role="tab" aria-controls="v-pills-profile" aria-selected="false">Profile</button>
+                        </div>
+                        <div class="tab-content" id="v-pills-tabContent">
+                          <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab" tabindex="0">...</div>
+                          <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab" tabindex="0">...</div>
+                          <div class="tab-pane fade" id="v-pills-disabled" role="tabpanel" aria-labelledby="v-pills-disabled-tab" tabindex="0">...</div>
+                          <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab" tabindex="0">...</div>
+                          <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab" tabindex="0">...</div>
+                        </div>
+                      </div>
+                </div>
+                <div class="tab-pane fade" id="pills-ayudas" role="tabpanel" aria-labelledby="pills-profile-tab" tabindex="0">Ayudas</div>
+                <div class="tab-pane fade" id="pills-permisos" role="tabpanel" aria-labelledby="pills-contact-tab" tabindex="0">Permisos</div>
+              </div>
             </div>
             <div class="col md-4"></div>
         </div>
