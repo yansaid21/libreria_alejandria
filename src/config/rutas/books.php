@@ -32,10 +32,11 @@ $data_base = null;
 $app->get('/api/registros/documentos/{email_user}', function(Request $request, Response $response, array $args) {
   $email = $args['email_user'];
   //echo json_encode('este es email en php '.$email);
-  $sql = "SELECT * FROM documentos as do 
+  $sql = "SELECT * FROM documentos as doc 
   inner join usuarios as u
   inner join registros as re
   on u.num_identificacion = re.fk_num_identificacion
+  and doc.id_documento=re.fk_id_documento
   WHERE email = '$email'";
   try {
       $data_base = new db();
