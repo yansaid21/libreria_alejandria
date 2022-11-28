@@ -79,7 +79,7 @@ function organizarArticulo(index){
 }
 function siguienteArticulo(){
   let html;
-    html =`
+    html +=`
       <li class="page-item">
       <button class="page-link" href="javascript:;" onClick=" ;retornoPosicion('articulos',restarPaginacionArticulos() )">&laquo;</button>
       </li>
@@ -159,7 +159,7 @@ function restarPaginacionLibros(){
   }
 }
 function organizarLibro(index){
-  indexlibros=index;
+  indexLibros=index;
   return indexLibros
 }
 function siguienteLibro(){

@@ -38,9 +38,11 @@ misDocumentos
         </div>
         <div class="tab-content" id="pills-tabContent">
             <!-- contenido del boton_todos -->
-            <div class="tab-pane fade show active" id="pills-todos" role="tabpanel" aria-labelledby="pills-home-tab" tabindex="0">
-                <div class="row" id="row_todos">      
-                    
+            <div class="tab-pane fade show active" id="pills-todos" role="tabpanel" aria-labelledby="pills-home-tab" tabindex="0">                
+                <div class="row" id="row_todos"> 
+                    <ul class="row" id="linea_libros"> 
+                    </ul>
+
                 </div>
             </div>
             <!-- contenido del boton_libros -->
@@ -72,136 +74,22 @@ misDocumentos
                 <div class="tab-content" id="pills-tabContent-libros">
                     <div class="tab-pane fade show active" id="pills-todos-libros" role="tabpanel" aria-labelledby="pills-home-tab" tabindex="0">
                         AQUÍ VAN TODOS LOS LIBROS DE TODOS LOS GÉNEROS
-                        <div class="row" id="row_articulos">
-                            <div class="col-md-3">
-                                <br><br>
-                                <div class="card text-white bg-primary mb-3" style="max-width: 20rem;">
-                                    <div class="card-header"></div>
-                                    <div class="card-body">
-                                        <p class="card-text">
-                                            <img src="https://tercerafundacion.net/imagenes/portada/P-00064247.jpg" alt="" height="500" width="225">
-                                        </p>
-                                        <div class="container">
-                                            <div class="row">
-                                                <div class="col md-1">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
-                                                        <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z"/>
-                                                    </svg>
-                                                </div>
-                                                <div class="col md-1">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-download" viewBox="0 0 16 16">
-                                                        <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/>
-                                                        <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"/>
-                                                    </svg>
-                                                </div>
-                                                <div class="col md-1">
-                                                    <button type="button" class="btn btn-outline-secondary">Leer</button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-3">
-                                <br><br>
-                                <div class="card text-white bg-primary mb-3" style="max-width: 20rem;">
-                                    <div class="card-header"></div>
-                                    <div class="card-body">
-                                        <p class="card-text">
-                                            <img src="https://www.penguinlibros.com/co/354291-large_default/harry-potter-y-la-piedra-filosofal.jpg" alt="" height="500" width="225">
-                                        </p>
-                                        <div class="container">
-                                            <div class="row">
-                                                <div class="col md-1">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
-                                                        <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z"/>
-                                                    </svg>
-                                                </div>
-                                                <div class="col md-1">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-download" viewBox="0 0 16 16">
-                                                        <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/>
-                                                        <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"/>
-                                                    </svg>
-                                                </div>
-                                                <div class="col md-1">
-                                                    <button type="button" class="btn btn-outline-secondary">Leer</button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                        <div class="row" id="row_libros">
                         </div>
                     </div>
                     <div class="tab-pane fade" id="pills-romance" role="tabpanel" aria-labelledby="pills-profile-tab" tabindex="0">
                         AQUÍ VAN LOS LIBROS DE ROMANCE
+                        <div class="row" id="row_romance">
+                        </div>
                     </div>
                     <div class="tab-pane fade" id="pills-ficcion" role="tabpanel" aria-labelledby="pills-contact-tab" tabindex="0">
                         AQUÍ VAN LOS LIBROS DE FICCIÓN
-                        <div class="row" id="row_articulos">
-                            <div class="col-md-3">
-                                <br><br>
-                                <div class="card text-white bg-primary mb-3" style="max-width: 20rem;">
-                                    <div class="card-header"></div>
-                                    <div class="card-body">
-                                        <p class="card-text">
-                                            <img src="https://tercerafundacion.net/imagenes/portada/P-00064247.jpg" alt="" height="500" width="225">
-                                        </p>
-                                        <div class="container">
-                                            <div class="row">
-                                                <div class="col md-1">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
-                                                        <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z"/>
-                                                    </svg>
-                                                </div>
-                                                <div class="col md-1">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-download" viewBox="0 0 16 16">
-                                                        <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/>
-                                                        <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"/>
-                                                    </svg>
-                                                </div>
-                                                <div class="col md-1">
-                                                    <button type="button" class="btn btn-outline-secondary">Leer</button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                        <div class="row" id="row_ficcion">
                         </div>
                     </div>
                     <div class="tab-pane fade" id="pills-infantil" role="tabpanel" aria-labelledby="pills-disabled-tab" tabindex="0">
                         AQUÍ VAN LOS LIBROS INFANTILES
-                        <div class="row" id="row_articulos">
-                            <div class="col-md-3">
-                                <br><br>
-                                <div class="card text-white bg-primary mb-3" style="max-width: 20rem;">
-                                    <div class="card-header"></div>
-                                    <div class="card-body">
-                                        <p class="card-text">
-                                            <img src="https://www.penguinlibros.com/co/354291-large_default/harry-potter-y-la-piedra-filosofal.jpg" alt="" height="500" width="225">
-                                        </p>
-                                        <div class="container">
-                                            <div class="row">
-                                                <div class="col md-1">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
-                                                        <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z"/>
-                                                    </svg>
-                                                </div>
-                                                <div class="col md-1">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-download" viewBox="0 0 16 16">
-                                                        <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/>
-                                                        <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"/>
-                                                    </svg>
-                                                </div>
-                                                <div class="col md-1">
-                                                    <button type="button" class="btn btn-outline-secondary">Leer</button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                        <div class="row" id="row_infantil">
                         </div>
                     </div>
                   </div>
@@ -209,69 +97,11 @@ misDocumentos
             <!-- contenido del boton_articulos -->
             <div class="tab-pane fade" id="pills-articulos" role="tabpanel" aria-labelledby="pills-contact-tab" tabindex="0">
                 <div class="row" id="row_articulos">
-                    <div class="col-md-3">
-                        <br><br>
-                        <div class="card text-white bg-primary mb-3" style="max-width: 20rem;">
-                            <div class="card-header"></div>
-                            <div class="card-body">
-                                <p class="card-text">
-                                    <img src="https://revmovimientocientifico.ibero.edu.co/public/journals/4/cover_issue_101_es_ES.jpg" alt="" height="500" width="225">
-                                </p>
-                                <div class="container">
-                                    <div class="row">
-                                        <div class="col md-1">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
-                                                <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z"/>
-                                            </svg>
-                                        </div>
-                                        <div class="col md-1">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-download" viewBox="0 0 16 16">
-                                                <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/>
-                                                <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"/>
-                                            </svg>
-                                        </div>
-                                        <div class="col md-1">
-                                            <button type="button" class="btn btn-outline-secondary">Leer</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
             <!-- contenido del boton_ponencias -->
             <div class="tab-pane fade" id="pills-ponencias" role="tabpanel" aria-labelledby="pills-contact-tab" tabindex="0">
                 <div class="row" id="row_ponencias">
-                    <div class="col-md-3">
-                        <br><br>
-                        <div class="card text-white bg-primary mb-3" style="max-width: 20rem;">
-                            <div class="card-header"></div>
-                            <div class="card-body">
-                                <p class="card-text">
-                                    <img src="https://www.ainaralegardon.com/wp-content/uploads/2015/02/Portada-Ponencia-Retos-Digitales.jpg" alt="" height="500" width="225">
-                                </p>
-                                <div class="container">
-                                    <div class="row">
-                                        <div class="col md-1">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
-                                                <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z"/>
-                                            </svg>
-                                        </div>
-                                        <div class="col md-1">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-download" viewBox="0 0 16 16">
-                                                <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/>
-                                                <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"/>
-                                            </svg>
-                                        </div>
-                                        <div class="col md-1">
-                                            <button type="button" class="btn btn-outline-secondary">Leer</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>

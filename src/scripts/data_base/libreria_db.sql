@@ -14,7 +14,7 @@ email varchar(40) not null unique key,
 password varchar(30) not null,
 tipo_usuario enum("Usuario","Administrador","Autor"),
 permiso boolean,
-id_img varchar (100)
+id_img varchar (1000)
 );
 
 Create table direcciones(
@@ -93,8 +93,11 @@ values("2022-11-27",1000217300,1),
 
 
 #####
-SELECT * FROM documentos as do 
+SELECT * FROM documentos as doc
   inner join usuarios as u
   inner join registros as re
   on u.num_identificacion = re.fk_num_identificacion
-  WHERE email = "yansaid21@gmail.com";
+  and doc.id_documento=re.fk_id_documento
+  WHERE u.email = "yansaid21@gmail.com";
+  
+  select * from usuarios;
