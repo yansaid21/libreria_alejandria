@@ -143,4 +143,14 @@ header{
 .btn button{
     visibility: hidden;
 }
+
+.canva{
+    position: absolute;
+    bottom: 16px;
+    right: 16px;
+    width: 32px;
+    height: 32px;
+    z-index: 2;
+    background-size: cover;
+}
   

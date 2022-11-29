@@ -1,0 +1,26 @@
+{%extends 'layout.html'%}
+{%block title%}
+libreria_alejandria
+{%endblock%}
+
+
+{%block body %}
+<div class="container-fluid">
+    <canvas id="canvas3d" class="canva"></canvas>
+    <canvas id="canvas_boton_3d" onclick="InicioSesion"></canvas>
+</div>
+
+{% endblock %}
+
+{%block script%}
+{{ parent() }}
+<script type="importmap">
+    {
+        "imports":{
+            "@splinetool/runtime": "https://unpkg.com/@splinetool/runtime@0.9.142/build/runtime.js"
+        }
+    }
+</script>
+<script type="module" src="{{ base_path() }}/../src/scripts/front/escena_3D.js"></script>
+<script type="module" src="{{ base_path() }}/../src/scripts/front/boton_3D.js"></script>
+{% endblock %}
