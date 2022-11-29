@@ -58,19 +58,19 @@ Administrador
                                   <th class="text-center" id="opcion">Opcion</th>
                                 </tr>
                             </thead>
-                            <tbody id="datos_tabla">
+                            <tbody id="datos_tabla_usuarios">
                                 <tr>
-                                    <td>Leidi Marcela</td>
-                                    <td>Alzate Giraldo</td>
-                                    <td>Cedula</td>
-                                    <td>1053</td>
-                                    <td>313325</td>
-                                    <td>marce@gmail.com</td>
-                                    <td>Usuario</td>
-                                    <td>0</td>
-                                    <td><!-- Boton para editar al usuario --><a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil" viewBox="0 0 16 16">
+                                    <td class="text-center">Leidi Marcela</td>
+                                    <td class="text-center">Alzate Giraldo</td>
+                                    <td class="text-center">Cedula</td>
+                                    <td class="text-center">1053</td>
+                                    <td class="text-center">313325</td>
+                                    <td class="text-center">marce@gmail.com</td>
+                                    <td class="text-center">Usuario</td>
+                                    <td class="text-center">0</td>
+                                    <td class="text-center"><!-- Boton para editar al usuario --><a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-pencil" viewBox="0 0 16 16">
                                         <path d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z"/>
-                                      </svg></a> - <!-- Boton para borrar al usuario --><a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3" viewBox="0 0 16 16">
+                                      </svg></a>            <!-- Boton para borrar al usuario --><a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-trash3" viewBox="0 0 16 16">
                                         <path d="M6.5 1h3a.5.5 0 0 1 .5.5v1H6v-1a.5.5 0 0 1 .5-.5ZM11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3A1.5 1.5 0 0 0 5 1.5v1H2.506a.58.58 0 0 0-.01 0H1.5a.5.5 0 0 0 0 1h.538l.853 10.66A2 2 0 0 0 4.885 16h6.23a2 2 0 0 0 1.994-1.84l.853-10.66h.538a.5.5 0 0 0 0-1h-.995a.59.59 0 0 0-.01 0H11Zm1.958 1-.846 10.58a1 1 0 0 1-.997.92h-6.23a1 1 0 0 1-.997-.92L3.042 3.5h9.916Zm-7.487 1a.5.5 0 0 1 .528.47l.5 8.5a.5.5 0 0 1-.998.06L5 5.03a.5.5 0 0 1 .47-.53Zm5.058 0a.5.5 0 0 1 .47.53l-.5 8.5a.5.5 0 1 1-.998-.06l.5-8.5a.5.5 0 0 1 .528-.47ZM8 4.5a.5.5 0 0 1 .5.5v8.5a.5.5 0 0 1-1 0V5a.5.5 0 0 1 .5-.5Z"/>
                                       </svg></a></td>
                                 </tr>
@@ -79,56 +79,100 @@ Administrador
                     </div>
                 </div>                
                 <div class="tab-pane fade" id="pills-permisos" role="tabpanel" aria-labelledby="pills-contact-tab" tabindex="0">
-                    <div class="toast show" role="alert" aria-live="assertive" aria-atomic="true">
-                        <div class="toast-header">
-                          <strong class="me-auto">Nombre Usuario</strong>
-                          <button type="button" class="btn ms-2 mb-1" data-bs-dismiss="toast" aria-label="">
-                            <span aria-hidden="true"></span>
-                          </button>
-                        </div>
-                        <div class="toast-body">
-                          Su opinión
-                        </div>
+                    <center><h4>Usuarios que solicitaron permiso para editar un documento</h4></center>
+                    <br>
+                    <div class="table-responsive table-hover" id="tabla_permisos_usuarios">
+                        <table class="table table-hover">
+                            <thead class="text-muted">
+                                <tr>
+                                    <th class="text-center">Nombre</th>
+                                    <th class="text-center">Apellido</th>
+                                    <th class="text-center">Cédula</th>
+                                    <th class="text-center">Titulo documento</th><!-- Trae el título del documento que selecciono para editar -->
+                                    <th class="text-center">Permiso</th>
+                                </tr>
+                            </thead>
+                            <tbody id="datos_usuarios_permisos">
+                                <tr>
+                                    <td class="text-center">Leidi Marcela</td>
+                                    <td class="text-center">Alzate Giraldo</td>
+                                    <td class="text-center">1053</td>
+                                    <td class="text-center">Título del documento a modificar</td>
+                                    <td class="text-center"><a class="btn" href=""><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="#3cf281" class="bi bi-check" viewBox="0 0 16 16">
+                                        <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/>
+                                      </svg></a>    <a class="btn" href=""><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="#e44c55" class="bi bi-x" viewBox="0 0 16 16">
+                                        <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+                                      </svg></a></td> <!-- Segun el enlace que seleccione debe de cambiar la variable permiso -->
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
                 <div class="tab-pane fade" id="pills-ayudas" role="tabpanel" aria-labelledby="pills-profile-tab" tabindex="0">
-                    <div class="toast show" role="alert" aria-live="assertive" aria-atomic="true">                        
                     <div class="d-flex align-items-start">
                         <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                          <button class="btn btn-secondary nav-link" id="v-pills-user1-tab" data-bs-toggle="pill" data-bs-target="#v-pills-user1" type="button" role="tab" aria-controls="v-pills-home" aria-selected="false">Usuario 1</button>
-                          <button class="btn btn-secondary nav-link" id="v-pills-profile-user2" data-bs-toggle="pill" data-bs-target="#v-pills-user2" type="button" role="tab" aria-controls="v-pills-profile" aria-selected="false">Usuario 2</button>
+                            <!-- Cada uno de estos son los usuarios que solicitaron ayuda -->
+                          <button class="nav-link" id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-home" type="button" role="tab" aria-controls="v-pills-home" aria-selected="false">Usuario1</button>
+                          <button class="nav-link" id="v-pills-profile-tab" data-bs-toggle="pill" data-bs-target="#v-pills-profile" type="button" role="tab" aria-controls="v-pills-profile" aria-selected="false">Usuario2</button>
                         </div>
-                        <div class="row">
-                            <div class="col md-3">  
-                                jkdnvjkbfvhjbvjhd
-                            </div>
+                        <div class="tab-content" id="v-pills-tabContent">
+                          <div class="tab-pane fade" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab" tabindex="0">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col ">
+                                        <center><h3>Nombre usuario</h3></center>
+                                        <br>
+                                        <div class="toast show" role="alert" aria-live="assertive" aria-atomic="true">
+                                            <div class="toast-body" id="cuerpo_ayuda">
+                                              Queja del usuario 
+                                              <br>
+                                              .... 
+                                              <br>
+                                              ...... 
+                                              <br>.......................... 
+
+                                            </div>
+                                          </div>
+                                    </div>
+                                    <div class="col md-3"></div>
+                                    <div class="col md-6">
+                                        <div class="toast show" role="alert" aria-live="assertive" aria-atomic="true">
+                                            <div class="toast-header">
+                                            <strong class="me-auto">Respuesta</strong>
+                                            <button type="button" class="btn-close ms-2 mb-1" data-bs-dismiss="toast" aria-label="Close">
+                                                <span aria-hidden="true"></span>
+                                            </button>
+                                            </div>
+                                            <div class="toast-body">
+                                                Destinatario <br>
+                                                <input type="email" class="form-control" id="email_usuario_queja" aria-describedby="emailHelp" placeholder="Email del usuario">
+                                                <br><br>
+                                                Mensaje
+                                                <br>
+                                                <textarea class="form-control" id="respuesta_queja_usuario" rows="3"></textarea>
+                                                <br>
+                                                <p align="right"><button type="button" class="btn btn-secondary" id="enviar_respuesta">Enviar</button></p>
+                                            </div>
+                                        </div>  
+                                    </div> 
+                                </div>
+                            </div> 
+                          </div>
+                          <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab" tabindex="0">...</div>  
                         </div>
-                                
                       </div>
                 </div>
-                <div class="tab-pane fade" id="pills-opiniones" role="tabpanel" aria-labelledby="pills-home-tab" tabindex="0">
-                    <div class="toast show" role="alert" aria-live="assertive" aria-atomic="true">
-                        <div class="toast-header">
-                          <strong class="me-auto">Nombre Usuario</strong>
-                          <button type="button" class="btn ms-2 mb-1" data-bs-dismiss="toast" aria-label="">
-                            <span aria-hidden="true"></span>
-                          </button>
-                        </div>
+                <div class="tab-pane fade" id="pills-opiniones" role="tabpanel" aria-labelledby="pills-home-tab" tabindex="0">                    
+                    <div class="toast show" role="alert" aria-live="assertive" aria-atomic="true">  
                         <div class="toast-body">
-                          Su opinión
+                          Opinion enviada por el usuario
                         </div>
-                    </div>
+                      </div>
                     <br>
-                    <div class="toast show" role="alert" aria-live="assertive" aria-atomic="true">
-                        <div class="toast-header">
-                          <strong class="me-auto">Nombre Usuario</strong>
-                          <button type="button" class="btn ms-2 mb-1" data-bs-dismiss="toast" aria-label="">
-                            <span aria-hidden="true"></span>
-                          </button>
-                        </div>
-                        <div class="toast-body">
-                          Su opinión
-                        </div>
+                    <div class="toast show" role="alert" aria-live="assertive" aria-atomic="true">  
+                    <div class="toast-body">
+                        Opinion enviada por el usuario
+                    </div>
                     </div>
                 </div>
               </div>
@@ -138,3 +182,4 @@ Administrador
         </div>
     </div>
 {%endblock%}
+

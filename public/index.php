@@ -72,5 +72,10 @@ $app->get('/info', function ($request, $response, $args) {
     return $view->render($response, 'sobre_nosotros.html');
 })->setName('info');
 
+$app->get('/admin', function ($request, $response, $args) {
+    $view = Twig::fromRequest($request);
+    return $view->render($response, 'administrador.html');
+})->setName('admin');
+
 // Run app
 $app->run();
