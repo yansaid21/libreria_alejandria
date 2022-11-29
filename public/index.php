@@ -52,7 +52,7 @@ $app->get('/compras', function ($request, $response, $args) {
     return $view->render($response, 'compras.html');
 })->setName('compras');
 
-$app->get('/comentarios', function ($request, $response, $args) {
+$app->get('/{email_user}/comentarios', function ($request, $response, $args) {
     $view = Twig::fromRequest($request);
     return $view->render($response, 'comentarios.html');
 })->setName('comentarios');
