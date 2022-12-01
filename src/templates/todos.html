@@ -7,7 +7,10 @@ libreria_alejandria
 {%block body %}
 <div class="container-fluid">
     <canvas id="canvas3d" class="canva"></canvas>
-    <canvas id="canvas_boton_3d" onclick="InicioSesion"></canvas>
+    
+</div>
+<div class="container-fluid">
+    <button type="button" class="btn btn-light" >Registrate aquí para acceder a nuestro contenido</button>
 </div>
 
 {% endblock %}
@@ -22,5 +25,4 @@ libreria_alejandria
     }
 </script>
 <script type="module" src="{{ base_path() }}/../src/scripts/front/escena_3D.js"></script>
-<script type="module" src="{{ base_path() }}/../src/scripts/front/boton_3D.js"></script>
 {% endblock %}
