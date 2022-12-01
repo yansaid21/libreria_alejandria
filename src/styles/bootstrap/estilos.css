@@ -146,11 +146,25 @@ header{
 
 .canva{
     position: absolute;
-    bottom: 16px;
     right: 16px;
-    width: 32px;
-    height: 32px;
     z-index: 2;
     background-size: cover;
 }
   
+.btn-light .btn{
+    position: relative;
+    bottom: 16px;
+    right: 16px;
+    left: 16px;
+    top: 16px;
+    z-index: 3;
+}
+
+.btn-light {
+    position: relative;
+    bottom: 16px;
+    right: 16px;
+    left: 16px;
+    top: 16px;
+    z-index: 3;
+}
