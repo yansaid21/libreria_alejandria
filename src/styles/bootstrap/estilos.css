@@ -147,6 +147,8 @@ header{
 .canva{
     position: absolute;
     right: 16px;
+    width: 32px;
+    height: 32px;
     z-index: 2;
     background-size: cover;
 }
@@ -167,4 +169,28 @@ header{
     left: 16px;
     top: 16px;
     z-index: 3;
+}
+
+
+
+.btn-sm .btn{
+    position: relative;
+    bottom: 16px;
+}
+
+.btn-sm {
+    position: relative;
+    bottom: 16px;
+}
+
+
+
+.btn-info .btn{
+    position: relative;
+    bottom: 16px;
+}
+
+.btn-info {
+    position: relative;
+    bottom: 16px;
 }

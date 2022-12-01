@@ -82,5 +82,10 @@ $app->get('/todos', function ($request, $response, $args) {
     return $view->render($response, 'todos.html');
 })->setName('todos');
 
+$app->get('/leer', function ($request, $response, $args) {
+    $view = Twig::fromRequest($request);
+    return $view->render($response, 'leer.html');
+})->setName('leer');
+
 // Run app
 $app->run();
