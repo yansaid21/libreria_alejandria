@@ -4,11 +4,9 @@ var email_user= (arr[5]);
 let baseUrl = "http://localhost/libreria_alejandria/public/";
 
 export function crearUsuario(condicion) {
-  console.log(condicion);
+  //console.log(condicion);
   var email="";
   var num_identificacion="";
-
-   
     //console.log(document.getElementById("avatar_elegido").value.trim())
     if (condicion ==1){
       email=email_user;

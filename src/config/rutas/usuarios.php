@@ -5,14 +5,14 @@ use Psr\Http\Message\ServerRequestInterface as Request;
 //GET ALL
 
 $app->get('/api/usuarios', function (Request $request,Response $response){
-echo json_encode('llega al php del listado');
+//echo json_encode('llega al php del listado');
 
   $sql = "SELECT * FROM usuarios";
   try{
       $data_base= new db();
       $data_base= $data_base->connectiondb();
       $res= $data_base->query($sql);
-      echo json_encode('antes del if');
+      //echo json_encode('antes del if');
       if($res->rowcount()>0){
           $usuarios = $res->fetchAll(PDO::FETCH_OBJ);
           echo json_encode($usuarios);
