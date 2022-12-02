@@ -42,15 +42,10 @@ $app->get('/olvidaste', function ($request, $response, $args) {
     return $view->render($response, 'olvidaste.html');
 })->setName('olvidaste');
 
-$app->get('/ayuda', function ($request, $response, $args) {
+$app->get('/{email_user}/ayuda', function ($request, $response, $args) {
     $view = Twig::fromRequest($request);
     return $view->render($response, 'ayuda.html');
 })->setName('ayuda');
-
-$app->get('/compras', function ($request, $response, $args) {
-    $view = Twig::fromRequest($request);
-    return $view->render($response, 'compras.html');
-})->setName('compras');
 
 $app->get('/{email_user}/comentarios', function ($request, $response, $args) {
     $view = Twig::fromRequest($request);
@@ -67,7 +62,7 @@ $app->get('/{email_user}/documentosUsuarios', function ($request, $response, $ar
     return $view->render($response, 'documentosUsuarios.html');
 })->setName('documentosUsuarios');
 
-$app->get('/info', function ($request, $response, $args) {
+$app->get('/{email_user}/info', function ($request, $response, $args) {
     $view = Twig::fromRequest($request);
     return $view->render($response, 'sobre_nosotros.html');
 })->setName('info');
@@ -81,6 +76,11 @@ $app->get('/admin', function ($request, $response, $args) {
     $view = Twig::fromRequest($request);
     return $view->render($response, 'administrador.html');
 })->setName('admin');
+
+$app->get('/editar', function ($request, $response, $args) {
+    $view = Twig::fromRequest($request);
+    return $view->render($response, 'editar_perfil.html');
+})->setName('editar');
 
 // Run app
 $app->run();

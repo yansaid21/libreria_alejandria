@@ -4,12 +4,6 @@ Administrador
 {%endblock%}
 
 {%block body %}
-<a href="/libreria_alejandria/public/PaginaPrincipal.html">
-    <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-house" viewBox="0 0 16 16">
-        <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V8.207l.646.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.707 1.5ZM13 7.207V13.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V7.207l5-5 5 5Z"/>
-    </svg>
-</a> <!-- Pendiente de modificar ya que el administrador no va a la misma pagina principal de los usuarios -->
-
     <div class="container">
         <div class="row">
             <center>
@@ -18,29 +12,24 @@ Administrador
             <br><br>
         </div>
         <div class="row">
-                <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
-                    <div class="col md-3">
-                        <li class="nav-item" role="presentation">
-                            <button class="btn btn-secondary nav-link" id="pills-usuarios-tab" data-bs-toggle="pill" data-bs-target="#pills-usuarios" type="button" role="tab" aria-controls="pills-usuarios" aria-selected="false">Usuarios</button>
-                        </li>
-                    </div>
-                    <div class="col md-3">
-                        <li class="nav-item" role="presentation">
-                            <button class="btn btn-secondary nav-link" id="pills-permisos-tab" data-bs-toggle="pill" data-bs-target="#pills-permisos" type="button" role="tab" aria-controls="pills-permisos" aria-selected="false">Permisos</button>
-                        </li>
-                    </div>
-                    <div class="col md-3">
-                        <li class="nav-item" role="presentation">
-                            <button class="btn btn-secondary nav-link" id="pills-ayudas-tab" data-bs-toggle="pill" data-bs-target="#pills-ayudas" type="button" role="tab" aria-controls="pills-ayudas" aria-selected="false">Ayudas</button>
-                        </li>
-                    </div>
-                    <div class="col md-3">
-                        <li class="nav-item" role="presentation">
-                            <button class="btn btn-secondary nav-link" id="pills-opiniones-tab" data-bs-toggle="pill" data-bs-target="#pills-opiniones" type="button" role="tab" aria-controls="pills-opiniones" aria-selected="false">Opiniones</button>
-                        </li> 
-                    </div>                   
-                </ul>
-              <div class="tab-content" id="pills-tabContent">
+            <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                <div class="col md-3">
+                    <li class="nav-item" role="presentation">
+                        <button class="btn btn-secondary nav-link" id="pills-usuarios-tab" data-bs-toggle="pill" data-bs-target="#pills-usuarios" type="button" role="tab" aria-controls="pills-usuarios" aria-selected="false">Usuarios</button>
+                    </li>
+                </div>
+                <div class="col md-3">
+                    <li class="nav-item" role="presentation">
+                        <button class="btn btn-secondary nav-link" id="pills-ayudas-tab" data-bs-toggle="pill" data-bs-target="#pills-ayudas" type="button" role="tab" aria-controls="pills-ayudas" aria-selected="false">Ayudas</button>
+                    </li>
+                </div>
+                <div class="col md-3">
+                    <li class="nav-item" role="presentation">
+                        <button class="btn btn-secondary nav-link" id="pills-opiniones-tab" data-bs-toggle="pill" data-bs-target="#pills-opiniones" type="button" role="tab" aria-controls="pills-opiniones" aria-selected="false">Opiniones</button>
+                    </li> 
+                </div>                   
+            </ul>
+            <div class="tab-content" id="pills-tabContent">
                 <div class="tab-pane fade" id="pills-usuarios" role="tabpanel" aria-labelledby="pills-usuarios-tab" tabindex="0">
                     <h2 class="text-center">Información de usuarios</h2>
                     <div class="table-responsive table-hover" id="tabla_usuarios">
@@ -77,46 +66,16 @@ Administrador
                             </tbody>
                         </table>
                     </div>
-                </div>                
-                <div class="tab-pane fade" id="pills-permisos" role="tabpanel" aria-labelledby="pills-contact-tab" tabindex="0">
-                    <center><h4>Usuarios que solicitaron permiso para editar un documento</h4></center>
-                    <br>
-                    <div class="table-responsive table-hover" id="tabla_permisos_usuarios">
-                        <table class="table table-hover">
-                            <thead class="text-muted">
-                                <tr>
-                                    <th class="text-center">Nombre</th>
-                                    <th class="text-center">Apellido</th>
-                                    <th class="text-center">Cédula</th>
-                                    <th class="text-center">Titulo documento</th><!-- Trae el título del documento que selecciono para editar -->
-                                    <th class="text-center">Permiso</th>
-                                </tr>
-                            </thead>
-                            <tbody id="datos_usuarios_permisos">
-                                <tr>
-                                    <td class="text-center">Leidi Marcela</td>
-                                    <td class="text-center">Alzate Giraldo</td>
-                                    <td class="text-center">1053</td>
-                                    <td class="text-center">Título del documento a modificar</td>
-                                    <td class="text-center"><a class="btn" href=""><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="#3cf281" class="bi bi-check" viewBox="0 0 16 16">
-                                        <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/>
-                                      </svg></a>    <a class="btn" href=""><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="#e44c55" class="bi bi-x" viewBox="0 0 16 16">
-                                        <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
-                                      </svg></a></td> <!-- Segun el enlace que seleccione debe de cambiar la variable permiso -->
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
+                </div>             
                 <div class="tab-pane fade" id="pills-ayudas" role="tabpanel" aria-labelledby="pills-profile-tab" tabindex="0">
                     <div class="d-flex align-items-start">
                         <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
                             <!-- Cada uno de estos son los usuarios que solicitaron ayuda -->
-                          <button class="nav-link" id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-home" type="button" role="tab" aria-controls="v-pills-home" aria-selected="false">Usuario1</button>
-                          <button class="nav-link" id="v-pills-profile-tab" data-bs-toggle="pill" data-bs-target="#v-pills-profile" type="button" role="tab" aria-controls="v-pills-profile" aria-selected="false">Usuario2</button>
+                        <button class="nav-link" id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-home" type="button" role="tab" aria-controls="v-pills-home" aria-selected="false">Usuario1</button>
+                        <button class="nav-link" id="v-pills-profile-tab" data-bs-toggle="pill" data-bs-target="#v-pills-profile" type="button" role="tab" aria-controls="v-pills-profile" aria-selected="false">Usuario2</button>
                         </div>
                         <div class="tab-content" id="v-pills-tabContent">
-                          <div class="tab-pane fade" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab" tabindex="0">
+                        <div class="tab-pane fade" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab" tabindex="0">
                             <div class="container">
                                 <div class="row">
                                     <div class="col ">
@@ -124,15 +83,15 @@ Administrador
                                         <br>
                                         <div class="toast show" role="alert" aria-live="assertive" aria-atomic="true">
                                             <div class="toast-body" id="cuerpo_ayuda">
-                                              Queja del usuario 
-                                              <br>
-                                              .... 
-                                              <br>
-                                              ...... 
-                                              <br>.......................... 
+                                            Queja del usuario 
+                                            <br>
+                                            .... 
+                                            <br>
+                                            ...... 
+                                            <br>.......................... 
 
                                             </div>
-                                          </div>
+                                        </div>
                                     </div>
                                     <div class="col md-3"></div>
                                     <div class="col md-6">
@@ -157,29 +116,30 @@ Administrador
                                     </div> 
                                 </div>
                             </div> 
-                          </div>
-                          <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab" tabindex="0">...</div>  
                         </div>
-                      </div>
+                        <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab" tabindex="0">...</div>  
+                        </div>
+                    </div>
                 </div>
                 <div class="tab-pane fade" id="pills-opiniones" role="tabpanel" aria-labelledby="pills-home-tab" tabindex="0">                    
                     <div class="toast show" role="alert" aria-live="assertive" aria-atomic="true">  
                         <div class="toast-body">
-                          Opinion enviada por el usuario
+                        Opinion enviada por el usuario
                         </div>
-                      </div>
+                    </div>
                     <br>
                     <div class="toast show" role="alert" aria-live="assertive" aria-atomic="true">  
-                    <div class="toast-body">
-                        Opinion enviada por el usuario
-                    </div>
+                        <div class="toast-body">
+                            Opinion enviada por el usuario
+                        </div>
                     </div>
                 </div>
-              </div>
+            </div>
             </div>
             <div class="col md-4"></div>
         </div>
-        </div>
+    </div>
     </div>
 {%endblock%}
+
 
