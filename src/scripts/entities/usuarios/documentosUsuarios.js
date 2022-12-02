@@ -49,6 +49,21 @@ function enlistarLibros() {
       },'json');
       })  
   } 
+  function clasificarMisLibros(){
+    for(var i=0;i<mis_libros.length;i++){
+    if(mis_libros[i].tema == 'infantil'){
+      mis_infantil.push(mis_libros[i]);
+      console.log("infantil: ",mis_infantil);
+    }else if(mis_libros[i].tema== 'romance'){
+      mis_romance.push(mis_libros[i]);
+      console.log("romance: ",mis_romance);
+    }else if(mis_libros[i].tema== 'ficcion'){
+      mis_ficcion.push(mis_libros[i]);
+      console.log("ficcion: ",mis_ficcion);
+    }
+  }
+  
+  }
   
   function DocsUsuario(row, lista){
     let html=``;
@@ -137,7 +152,7 @@ function enlistarLibros() {
   
 
     enlistarLibros().then(()=>{
-      clasificarLibros();
+      clasificarMisLibros();
       DocsUsuario("row_todos",mis_todos);
       DocsUsuario("row_articulos",mis_articulos);
       DocsUsuario("row_ponencias",mis_ponencias);

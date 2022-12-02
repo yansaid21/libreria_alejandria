@@ -77,7 +77,7 @@ $app->get('/admin', function ($request, $response, $args) {
     return $view->render($response, 'administrador.html');
 })->setName('admin');
 
-$app->get('/{email_user/}editar', function ($request, $response, $args) {
+$app->get('/{email_user}/editar', function ($request, $response, $args) {
     $view = Twig::fromRequest($request);
     return $view->render($response, 'editar_perfil.html');
 })->setName('editar');

@@ -22,11 +22,15 @@ function rutaDocumentos(){
 document.getElementById('ruta_documentos').href=urlDocumentos;
 }
 function rutaPaginaPrincipal(){
-  var url=baseUrl + email_user + "/PaginaPrincipal";
+  url=baseUrl + email_user + "/PaginaPrincipal";
   location.href = url;
 }
 function sobreNosotros(){
-  var urlPrincipal=baseUrl + email_user + "/info";
+  urlPrincipal=baseUrl + email_user + "/info";
+  location.href = urlPrincipal;
+}
+function editarPerfil(){
+  urlPrincipal=baseUrl + email_user + "/editar";
   location.href = urlPrincipal;
 }
 poner_avatar();

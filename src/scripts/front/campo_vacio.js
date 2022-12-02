@@ -1,7 +1,7 @@
 import {crearUsuario} from '../entities/usuarios/postUsuarios.js';
 console.log("llegue mi perro ");
 
- window.verificar_contraseña_campos=function(){
+ window.verificar_contrasena_campos=function(condicion){
     var contrasena1 = document.getElementById("contrasena").value.trim();
     var contrasena2 = document.getElementById("verificacion_contrasena").value.trim();
     let texto_primer_nombre = document.getElementById('primer_nombre');
@@ -21,7 +21,7 @@ console.log("llegue mi perro ");
             showConfirmButton: true
         })
     } else if (texto_primer_nombre != "" && texto_primer_apellido != "" && texto_numero_documento != "" && texto_telefono != "" && texto_email != "" && contrasena1 != "" && contrasena2 != ""){
-        crearUsuario();
+        crearUsuario(condicion);
         Swal.fire({
             icon: 'success',
             iconColor: '#6f42c1',
@@ -45,6 +45,4 @@ console.log("llegue mi perro ");
     }
     return false;
 }
-
-
 
