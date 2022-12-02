@@ -89,7 +89,7 @@ $app->get('/api/usuarios/{email_user}', function(Request $request, Response $res
       echo json_encode('Nuevo usuario creado') ;
   
       $res = null;
-      $bd = null;
+      $data_base = null;
     } catch(PDOException $e) {
       echo '{"Error" : {"Text" : '.$e->getMessage().'}}';
     }

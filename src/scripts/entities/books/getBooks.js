@@ -36,25 +36,28 @@ function enlistarLibros() {
         resolve(libros); 
         
       }
-     }
-    },'json');
-    })
+    }
+  },'json');
+})
 }
 function retornoPosicion(lista,posicion){
   let dataBook;
   console.log("lista: ", lista);
-    console.log("posicion: ", posicion);
-    if(lista=='articulos'){
-      console.log("articulos: ", articulos);
-      dataBook=articulos[posicion];
-      document.getElementById('articulos').src=dataBook.url_img;
+  console.log("posicion: ", posicion);
+  if(lista=='articulos'){
+    console.log("articulos: ", articulos);
+    dataBook=articulos[posicion];
+    document.getElementById('articulos').src=dataBook.url_img;
+    document.getElementById('articulo_actual').value = indexArticulos;
       
     }else if(lista=='ponencias'){
       dataBook=ponencias[posicion];
       document.getElementById('ponencias').src=dataBook.url_img;
+      document.getElementById('libro_actual').value= indexPonencias;
     }else if(lista=='libros'){
       dataBook=libros[posicion];
       document.getElementById('libros').src=dataBook.url_img; 
+      document.getElementById('ponencia_actual').value= indexLibros;
     }
 }
 
@@ -78,7 +81,7 @@ function organizarArticulo(index){
   return indexArticulos
 }
 function siguienteArticulo(){
-  let html;
+  let html = ``;
     html +=`
       <li class="page-item">
       <button class="page-link" href="javascript:;" onClick=" ;retornoPosicion('articulos',restarPaginacionArticulos() )">&laquo;</button>
@@ -121,7 +124,7 @@ function organizarPonencia(index){
 }
 function siguientePonencia(){
   console.log("este es indexPonencias: ",indexPonencias);
-  let html;
+  let html=``;
     html =`
       <li class="page-item">
       <button class="page-link" href="javascript:;" onClick=" ;retornoPosicion('ponencias',restarPaginacionPonencias() )">&laquo;</button>
@@ -163,7 +166,7 @@ function organizarLibro(index){
   return indexLibros
 }
 function siguienteLibro(){
-  let html;
+  let html=``;
     html =`
       <li class="page-item">
       <button class="page-link" href="javascript:;" onClick=" ;retornoPosicion('libros',restarPaginacionLibros() )">&laquo;</button>
@@ -184,15 +187,16 @@ function siguienteLibro(){
   `;
   $('#paginacion_libros').html(html);
 }
-enlistarLibros().then(()=>{
- retornoPosicion('articulos',0); 
- retornoPosicion('libros',0);
- retornoPosicion('ponencias',0);
- Paginaciones();
-});
+
 function Paginaciones(){
 
   siguienteArticulo();
   siguientePonencia();
   siguienteLibro();
 }
+enlistarLibros().then(()=>{
+ retornoPosicion('articulos',0); 
+ retornoPosicion('libros',0);
+ retornoPosicion('ponencias',0);
+ Paginaciones();
+});

@@ -64,7 +64,7 @@ function enlistarLibros() {
   }
   };
   function DocsUsuario(row, lista){
-    let html;
+    let html=``;
     for(var i=0;i<lista.length;i++){
       html +=`
       <div class="col-md-3">

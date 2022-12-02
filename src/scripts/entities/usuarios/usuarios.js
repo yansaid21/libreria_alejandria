@@ -1,7 +1,6 @@
 console.log("mostrar en consola");
 let baseUrl = window.location.href;
 
-
 function listarUsuarios() {
   //console.log(baseUrl);
   $.get(`${baseUrl}/../api/usuarios`, function( data ) {
@@ -17,7 +16,7 @@ function inicioSesion(){
   console.log("base url ", baseUrl);
   email_user = document.getElementById("email_user").value.trim();
   $.get(`${baseUrl}/../api/usuarios/${email_user}`, function (data) {
-    let dataUsr = data[0];
+    dataUsr = data[0];
     console.log("log del usuarios.js: ", dataUsr);
     //console.log("contraseña de la database: ", dataUsr.password);
     console.log("contraseña input",document.getElementById("InputContrasena").value.trim() );

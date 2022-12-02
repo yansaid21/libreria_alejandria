@@ -21,4 +21,12 @@ function rutaDocumentos(){
   var urlDocumentos=urllocal+"/DocumentosUsuarios";
 document.getElementById('ruta_documentos').href=urlDocumentos;
 }
+function rutaPaginaPrincipal(){
+  var url=baseUrl + email_user + "/PaginaPrincipal";
+  location.href = url;
+}
+function sobreNosotros(){
+  var urlPrincipal=baseUrl + email_user + "/info";
+  location.href = urlPrincipal;
+}
 poner_avatar();

@@ -42,3 +42,21 @@ function descargar_documento(){
         cancelButtonText: 'Cancelar'
     })
 }
+function agregarFavoritos(){
+    Swal.fire({
+        title: '¿Estás seguro que deseas agregar este documento a favoritos?',
+        icon: 'warning',
+        iconColor: '#6f42c1',
+        color: 'white',
+        background: '#1a0933',
+        showCancelButton: true,
+        confirmButtonColor: '#ea39b8',
+        cancelButtonColor: '#e44c55',
+        confirmButtonText: 'Sí, quiero descargarlo',
+        cancelButtonText: 'Cancelar'
+    }).then((result)=>{
+        if(result.isConfirmed){
+            
+        }
+    })
+}
