@@ -66,6 +66,7 @@ function enlistarLibros() {
   function DocsUsuario(row, lista){
     let html=``;
     for(var i=0;i<lista.length;i++){
+      let librito=lista[i];
       html +=`
       <div class="col-md-3">
                         <br><br>
@@ -73,12 +74,12 @@ function enlistarLibros() {
                             <div class="card-header"></div>
                             <div class="card-body">
                                 <p class="card-text">
-                                  <img src=${lista[i].url_img} href="javascript:;" alt="" height="500" width="225">
+                                  <img src=${librito.url_img} href="javascript:;" alt="" height="500" width="225">
                                 </p>
                                 <div class="container">
                                     <div class="row">
                                         <div class="col md-1">
-                                            <button type="button" class="btn button" onclick="return eliminar_documento()">
+                                            <button type="button" class="btn button" onclick="return eliminar_documento(${librito.id_documento})">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
                                                     <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z"/>
                                                 </svg>
@@ -106,6 +107,39 @@ function enlistarLibros() {
       $('#'+row ).html(html);
     }
     }
+    function eliminar_documento(id){
+      Swal.fire({
+          title: '¿Estás seguro de eliminar este documento?',
+          text: "¡No habrá vuelta atrás!",
+          icon: 'warning',
+          iconColor: '#6f42c1',
+          color: 'white',
+          background: '#1a0933',
+          showCancelButton: true,
+          confirmButtonColor: '#ea39b8',
+          cancelButtonColor: '#e44c55',
+          confirmButtonText: 'Sí, quiero eliminarlo',
+          cancelButtonText: 'Cancelar'
+      }).then((result) => {
+        console.log("id que llega",id);
+        $.post(`${baseUrl}/../api/registros/eliminar`,{ id: id }, function( data ) {
+          console.log(data);
+          location.reload()
+        });
+      if (result.isConfirmed) {
+          Swal.fire({
+          icon: 'warning',
+          iconColor: '#6f42c1',
+          color: 'white',
+          background: '#1a0933',
+          icon: 'success',
+          title: 'Eliminado',
+          text: 'Tu documento ha sido eliminado',
+          showConfirmButton: true
+          })
+      }
+      })
+  }
     enlistarLibros().then(()=>{
       clasificarLibros();
       DocsUsuario("row_todos",todos);

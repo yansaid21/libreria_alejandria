@@ -72,7 +72,7 @@ function crearRegistro(tipo_documento) {
             sumaAmbos
         };
         console.log("aqui todo bien crearusuario",fk_id_documento);
-        $.post(`${baseUrl}/../api/registro/nuevo`, datos_registro, function (data) {
+        $.post(`${baseUrl}/../api/registros/nuevo`, datos_registro, function (data) {
             console.log(data);
             if(data== `{"Error" : {"Text" : SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '${sumaAmbos}' for key 'registros.sumaAmbos'}}`){
                 Swal.fire({
@@ -100,4 +100,5 @@ function crearRegistro(tipo_documento) {
   
     return false;
   }
+  
 

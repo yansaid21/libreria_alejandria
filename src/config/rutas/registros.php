@@ -2,7 +2,7 @@
 use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Http\Message\ServerRequestInterface as Request;
 
-$app->post('/api/registro/nuevo', function(Request $request, Response $response, array $args) {
+$app->post('/api/registros/nuevo', function(Request $request, Response $response, array $args) {
   json_encode("we are here in registro");
   $fecha_adquisicion = $request->getParsedBody()['fecha_adquisicion'];
   $fk_num_identificacion = $request->getParsedBody()['fk_num_identificacion'];
@@ -51,6 +51,30 @@ $app->get('/api/registros/{email_user}', function(Request $request, Response $re
       } else {
         echo json_encode('No hay usuarios que mostrar con este email');
       }
+      $res = null;
+      $data_base = null;
+    } catch(PDOException $e) {
+      echo '{"Error" : {"Text" : '.$e->getMessage().'}}';
+    }
+  
+    return $response;
+  });
+  $app->post('/api/registros/eliminar', function(Request $request, Response $response, array $args) {
+    $id = $request->getParsedBody()['id'];
+  
+    $sql = "DELETE FROM registros WHERE fk_id_documento  = $id";
+    try {
+      $data_base = new db();
+      $data_base = $data_base->connectiondb();
+      $res = $data_base->prepare($sql);
+      $res->execute();
+  
+      if($res->rowcount()) {
+        echo "registro $id eliminado";
+      } else {
+        echo "No existe registro con el id: $id";
+      }
+  
       $res = null;
       $data_base = null;
     } catch(PDOException $e) {
