@@ -1,10 +1,10 @@
-var articulos=[];
-var ponencias=[];
-var libros=[];
-var todos=[];
-var romance=[];
-var infantil=[];
-var ficcion=[];
+var mis_articulos=[];
+var mis_ponencias=[];
+var mis_libros=[];
+var mis_todos=[];
+var mis_romance=[];
+var mis_infantil=[];
+var mis_ficcion=[];
 email_user= (arr[5]);
 
 //console.log(baseUrl);
@@ -21,48 +21,35 @@ email_user= (arr[5]);
       return false; 
 }*/
 function enlistarLibros() {
-    articulos=[];
-   ponencias=[];
-   libros=[];
+    mis_articulos=[];
+   mis_ponencias=[];
+   mis_libros=[];
     return new Promise((resolve,reject) => {
       $.get(`${baseUrl}/../api/registros/documentos/${email_user}`, function( data ) {
-       // console.log("lista de libros : ", data);
+        console.log("lista de libros : ", data);
        for(var i=0;i<data.length;i++){
          let dataBook= data[i];
         if(dataBook.tipo=="artículo"){
-          articulos.push(dataBook)
-          resolve(articulos); 
+          mis_articulos.push(dataBook)
+          resolve(mis_articulos); 
          // console.log("articulos push: ", articulos);
         }
         if(dataBook.tipo=="ponencia"){
-          ponencias.push(dataBook)   
-          resolve(ponencias); 
+          mis_ponencias.push(dataBook)   
+          resolve(mis_ponencias); 
           
         }
         if(dataBook.tipo=="libro"){
-          libros.push(dataBook)
-          resolve(libros); 
+          mis_libros.push(dataBook)
+          resolve(mis_libros); 
           
         }
-        todos.push(dataBook);
+        mis_todos.push(dataBook);
        }
       },'json');
       })  
   } 
-  function clasificarLibros(){
-    for(var i=0;i<libros.length;i++){
-    if(libros[i].tema == 'infantil'){
-      infantil.push(libros[i]);
-      console.log("infantil: ",infantil);
-    }else if(libros[i].tema== 'romance'){
-      romance.push(libros[i]);
-      console.log("romance: ",romance);
-    }else if(libros[i].tema== 'ficcion'){
-      ficcion.push(libros[i]);
-      console.log("ficcion: ",ficcion);
-    }
-  }
-  };
+  
   function DocsUsuario(row, lista){
     let html=``;
     for(var i=0;i<lista.length;i++){
@@ -109,7 +96,7 @@ function enlistarLibros() {
     }
 
 
-    
+
     function eliminar_documento(id){
       Swal.fire({
           title: '¿Estás seguro de eliminar este documento?',
@@ -145,20 +132,24 @@ function enlistarLibros() {
       }
       })
   }
+
+
+  
+
     enlistarLibros().then(()=>{
       clasificarLibros();
-      DocsUsuario("row_todos",todos);
-      DocsUsuario("row_articulos",articulos);
-      DocsUsuario("row_ponencias",ponencias);
-      DocsUsuario("row_libros",libros);
-      DocsUsuario("row_infantil",infantil);
-      DocsUsuario("row_ficcion",ficcion);
-      DocsUsuario("row_romance",romance);
+      DocsUsuario("row_todos",mis_todos);
+      DocsUsuario("row_articulos",mis_articulos);
+      DocsUsuario("row_ponencias",mis_ponencias);
+      DocsUsuario("row_libros",mis_libros);
+      DocsUsuario("row_infantil",mis_infantil);
+      DocsUsuario("row_ficcion",mis_ficcion);
+      DocsUsuario("row_romance",mis_romance);
 
 
 
     });
-    console.log(articulos);
-    console.log(ponencias);
-    console.log(libros);
-    console.log("todos: ",todos);
+    console.log(mis_articulos);
+    console.log(mis_ponencias);
+    console.log(mis_libros);
+    console.log("todos: ",mis_todos);
