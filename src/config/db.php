@@ -3,7 +3,7 @@ header("Access-Control-Allow-Origin: *");
 class db {
   private $host = 'localhost';
   private $user = 'root';
-  private $pass = '00875044500025';
+  private $pass = '2022';
   private $nombreDB = 'Libreria_db';
 
   // Conección

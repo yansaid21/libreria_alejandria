@@ -1,0 +1,25 @@
+{%extends 'layout.html'%}
+{%block title%}
+libreria_alejandria
+{%endblock%}
+
+
+{%block body %}
+<div class="container-fluid">
+    <canvas id="canvas3d" class="canva"></canvas>
+    <button type="button" class="btn btn-light" onclick="location.href='{{ base_path() }}/'">Inicia sesión o registrate aquí para acceder a nuestro contenido</button>
+</div>
+
+{% endblock %}
+
+{%block script%}
+{{ parent() }}
+<script type="importmap">
+    {
+        "imports":{
+            "@splinetool/runtime": "https://unpkg.com/@splinetool/runtime@0.9.142/build/runtime.js"
+        }
+    }
+</script>
+<script type="module" src="{{ base_path() }}/../src/scripts/front/escena_3D.js"></script>
+{% endblock %}
