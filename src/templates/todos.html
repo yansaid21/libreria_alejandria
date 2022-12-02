@@ -7,10 +7,7 @@ libreria_alejandria
 {%block body %}
 <div class="container-fluid">
     <canvas id="canvas3d" class="canva"></canvas>
-    
-</div>
-<div class="container-fluid">
-    <button type="button" class="btn btn-light" >Registrate aquí para acceder a nuestro contenido</button>
+    <button type="button" class="btn btn-light" onclick="location.href='{{ base_path() }}/'">Inicia sesión o registrate aquí para acceder a nuestro contenido</button>
 </div>
 
 {% endblock %}

@@ -81,6 +81,10 @@ $app->get('/editar', function ($request, $response, $args) {
     $view = Twig::fromRequest($request);
     return $view->render($response, 'editar_perfil.html');
 })->setName('editar');
+$app->get('/leer', function ($request, $response, $args) {
+    $view = Twig::fromRequest($request);
+    return $view->render($response, 'leer.html');
+})->setName('leer');
 
 // Run app
 $app->run();
