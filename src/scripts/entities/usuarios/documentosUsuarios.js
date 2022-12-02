@@ -107,6 +107,9 @@ function enlistarLibros() {
       $('#'+row ).html(html);
     }
     }
+
+
+    
     function eliminar_documento(id){
       Swal.fire({
           title: '¿Estás seguro de eliminar este documento?',
@@ -124,18 +127,20 @@ function enlistarLibros() {
         console.log("id que llega",id);
         $.post(`${baseUrl}/../api/registros/eliminar`,{ id: id }, function( data ) {
           console.log(data);
-          location.reload()
         });
-      if (result.isConfirmed) {
+        if (result.isConfirmed) {
           Swal.fire({
-          icon: 'warning',
-          iconColor: '#6f42c1',
-          color: 'white',
-          background: '#1a0933',
-          icon: 'success',
-          title: 'Eliminado',
-          text: 'Tu documento ha sido eliminado',
-          showConfirmButton: true
+            icon: 'warning',
+            iconColor: '#6f42c1',
+            color: 'white',
+            background: '#1a0933',
+            icon: 'success',
+            title: 'Eliminado',
+            text: 'Tu documento ha sido eliminado',
+            showConfirmButton: true
+          }).then(()=>{
+            location.reload()
+            
           })
       }
       })

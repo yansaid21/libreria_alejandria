@@ -49,28 +49,34 @@ function traerUsuario(){
     })
 }
 
+function RegistroPPrincipal(tipo_documento){
+    if(tipo_documento== 'articulo_actual'){
+        index=document.getElementById(tipo_documento).value;
+        console.log("index: ", index);
+        fk_id_documento= articulos[index].id_documento;
+    }else if(tipo_documento== 'ponencia_actual'){
+        index=document.getElementById(tipo_documento).value;
+        fk_id_documento= ponencias[index].id_documento;
+    }else if(tipo_documento== 'libro_actual'){
+        index=document.getElementById(tipo_documento).value;
+        fk_id_documento= libros[index].id_documento;
+    }else{
+        fk_id_documento=tipo_documento;
+    }
+    sumaAmbos=dataUsr.num_identificacion + fk_id_documento;
+    let datos_registro = {
+        fecha_adquisicion: date,
+        fk_num_identificacion: dataUsr.num_identificacion,
+        fk_id_documento,
+        sumaAmbos
+    };
+    return datos_registro;
+}
 
 function crearRegistro(tipo_documento) {
     //console.log(document.getElementById("avatar_elegido").value.trim())
     traerUsuario().then(()=>{
-        if(tipo_documento== 'articulo_actual'){
-            index=document.getElementById(tipo_documento).value;
-            console.log("index: ", index);
-            fk_id_documento= articulos[index].id_documento;
-        }else if(tipo_documento== 'ponencia_actual'){
-            index=document.getElementById(tipo_documento).value;
-            fk_id_documento= ponencias[index].id_documento;
-        }else if(tipo_documento== 'libro_actual'){
-            index=document.getElementById(tipo_documento).value;
-            fk_id_documento= libros[index].id_documento;
-        }
-        sumaAmbos=dataUsr.num_identificacion + fk_id_documento;
-        let datos_registro = {
-            fecha_adquisicion: date,
-            fk_num_identificacion: dataUsr.num_identificacion,
-            fk_id_documento,
-            sumaAmbos
-        };
+        datos_registro=RegistroPPrincipal(tipo_documento);
         console.log("aqui todo bien crearusuario",fk_id_documento);
         $.post(`${baseUrl}/../api/registros/nuevo`, datos_registro, function (data) {
             console.log(data);
