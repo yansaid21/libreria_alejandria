@@ -12,8 +12,8 @@ apellido2 varchar(10),
 telefono bigint not null unique key,
 email varchar(40) not null unique key,
 password varchar(30) not null,
-tipo_usuario enum("Usuario","Administrador","Autor"),
-permiso boolean,
+suscrito enum("si","no") default("no"),
+tipo_usuario enum("Usuario","Administrador","Autor") default ("Usuario"),
 id_img varchar (1000)
 );
 
@@ -42,6 +42,7 @@ id_registro int auto_increment not null primary key,
 fecha_adquisicion date,
 fk_num_identificacion bigint,
 fk_id_documento int,
+sumaAmbos bigint unique key,
 foreign key (fk_num_identificacion) references usuarios(num_identificacion),
 foreign key (fk_id_documento) references documentos(id_documento)
 );
@@ -61,6 +62,13 @@ fk_id_documento int,
 fk_id_contacto int,
 foreign key (fk_id_documento) references documentos(id_documento),
 foreign key (fk_id_contacto) references contactos(id_contacto)
+);
+create table comentarios(
+id_comentario int auto_increment primary key,
+body varchar (15000),
+tipo_comentario enum ("principal","ayuda"),
+fk_num_identificacion bigint,
+foreign key (fk_num_identificacion) references usuarios(num_identificacion)
 );
 
 ############ insertar usuarios
@@ -85,11 +93,11 @@ values("El psicoanalista","2002-01-29","2022-11-25","libro","romance",1,"https:/
 ("Fahrenheit 451","1953-10-19","2022-11-27","libro","ficcion",1,"https://bibliolibros.files.wordpress.com/2014/11/fahrenheit-451.jpg");
 
 ############# insertar registros
-insert into registros(fecha_adquisicion,fk_num_identificacion,fk_id_documento)
-values("2022-11-27",1000217300,1),
-("2022-11-27",1000217300,5),
-("2022-11-27",1000217300,9),
-("2022-11-27",1000217300,10);
+insert into registros(fecha_adquisicion,fk_num_identificacion,fk_id_documento,sumaAmbos)
+values("2022-11-27",1000217300,1,1000217301),
+("2022-11-27",1000217300,5,1000217305),
+("2022-11-27",1000217300,9,1000217309),
+("2022-11-27",1000217300,10,10002173010);
 
 
 #####

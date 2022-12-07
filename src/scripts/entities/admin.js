@@ -28,11 +28,11 @@ function listarUsuarios() {
     
 //}
 ;
-$('#tabla_usuarios tbody').html(html);
+//$('#tabla_usuarios tbody').html(html);
   },'json');
 
   return false; 
 }
-listarUsuarios();
+
 
 
